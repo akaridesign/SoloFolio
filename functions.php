@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.30");
+define("SOLOFOLIO_VERSION",     "7.0.31");
 
 include_once("includes/gallery.php");         // Gallery shortcode replacement
 include_once("includes/social-widget.php");   // Social media widget
@@ -65,7 +65,9 @@ function filter_ptags_on_images($content) {
 add_filter('the_content', 'filter_ptags_on_images');
 
 function solofolio_load_fonts() {
-  $fonts = array(get_theme_mod('solofolio_font_body', 'Source+Sans+Pro'), get_theme_mod('solofolio_font_logo', 'Source+Sans+Pro'));
+  $fonts = array(get_theme_mod('solofolio_font_body', 'Source+Sans+Pro'),
+                 get_theme_mod('solofolio_font_logo', 'Source+Sans+Pro'),
+                 get_theme_mod('solofolio_font_head', 'Source+Sans+Pro'));
 
   $i = 1;
   foreach(array_unique($fonts) as $font) {
