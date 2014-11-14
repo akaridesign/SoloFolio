@@ -43,9 +43,9 @@
 			</div>
 		<?php } ?>
 		<div class="header-meta">
-			<?php if (get_theme_mod( 'solofolio_phone' ) != '') { ?>
-				<div class="header-phone">
-					<a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>"><?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?></a>
+			<?php if (get_theme_mod( 'solofolio_location' ) != '') { ?>
+				<div class="header-location">
+					<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
 				</div>
 			<?php } if (get_theme_mod( 'solofolio_email' ) != '') { ?>
 				<div class="header-email">
@@ -53,9 +53,9 @@
 						<?php echo get_theme_mod( 'solofolio_email', 'john@johndoe.com' ); ?>
 					</a>
 				</div>
-			<?php } if (get_theme_mod( 'solofolio_location' ) != '') { ?>
-				<div class="header-location">
-					<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
+			<?php } if (get_theme_mod( 'solofolio_phone' ) != '') { ?>
+				<div class="header-phone">
+					<a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>"><?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?></a>
 				</div>
 			<?php } ?>
 		</div>
