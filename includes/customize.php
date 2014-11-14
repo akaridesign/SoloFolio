@@ -367,16 +367,16 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 30,
 	) );
 
-		$wp_customize->add_setting( 'solofolio_phone', array(
+		$wp_customize->add_setting( 'solofolio_location', array(
 			'transport'   => 'postMessage',
-			'default'           => '555-555-5555',
+			'default'           => 'Athens, Ohio',
 			'sanitize_callback' => 'solofolio_sanitize_html',
-      ));
+    ) );
 
-			$wp_customize->add_control( 'solofolio_phone', array(
+			$wp_customize->add_control( 'solofolio_location', array(
 				'transport'   => 'postMessage',
-				'label' => 'Phone Number',
-				'settings' => 'solofolio_phone',
+				'label' => 'Location',
+				'settings' => 'solofolio_location',
 				'section' => 'solofolio_content_section',
 				'type' => 'text',
 				'priority' => '30',
@@ -397,6 +397,21 @@ function solofolio_customize_register( $wp_customize )
 				'priority' => '30',
 			) );
 
+		$wp_customize->add_setting( 'solofolio_phone', array(
+			'transport'   => 'postMessage',
+			'default'           => '555-555-5555',
+			'sanitize_callback' => 'solofolio_sanitize_html',
+      ));
+
+			$wp_customize->add_control( 'solofolio_phone', array(
+				'transport'   => 'postMessage',
+				'label' => 'Phone Number',
+				'settings' => 'solofolio_phone',
+				'section' => 'solofolio_content_section',
+				'type' => 'text',
+				'priority' => '30',
+			) );
+
 		$wp_customize->add_setting( 'solofolio_copyright_text', array(
 			'transport'   => 'refresh',
 			'sanitize_callback' => 'solofolio_sanitize_html',
@@ -405,21 +420,6 @@ function solofolio_customize_register( $wp_customize )
 			$wp_customize->add_control( 'solofolio_copyright_text', array(
 				'label' => 'Copyright Text',
 				'settings' => 'solofolio_copyright_text',
-				'section' => 'solofolio_content_section',
-				'type' => 'text',
-				'priority' => '30',
-			) );
-
-		$wp_customize->add_setting( 'solofolio_location', array(
-			'transport'   => 'postMessage',
-			'default'           => 'Athens, Ohio',
-			'sanitize_callback' => 'solofolio_sanitize_html',
-    ) );
-
-			$wp_customize->add_control( 'solofolio_location', array(
-				'transport'   => 'postMessage',
-				'label' => 'Location',
-				'settings' => 'solofolio_location',
 				'section' => 'solofolio_content_section',
 				'type' => 'text',
 				'priority' => '30',
