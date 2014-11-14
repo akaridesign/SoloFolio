@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: A portfolio platform for creatives.
-Version: 7.0.29
+Version: 7.0.30
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -158,7 +158,7 @@ p:first-child { margin-top: 0 }
   list-style-type: none;
   list-style-position: initial;
 }
-.sidebar-widget { margin-top: 15px }
+.sidebar-widget, .solofolio-custom-menu { margin-top: 15px }
 form { font-size: .9rem }
 input,
 button {
@@ -607,6 +607,7 @@ input:focus, textarea:focus, button:focus { outline: none }
   }
   .site-title { line-height: 1 }
   .header .logo-img { margin: 0 auto }
+  .sidebar-widget, .solofolio-custom-menu { margin-top: 0 }
   .header-meta div {
     line-height: 1;
     display: inline-block;
