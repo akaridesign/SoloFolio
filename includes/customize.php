@@ -278,6 +278,20 @@ function solofolio_customize_register( $wp_customize )
 				'choices'  => $available_fonts
 			));
 
+		$wp_customize->add_setting( 'solofolio_font_head', array(
+      'default'   => 'Roboto',
+      'transport'   => 'refresh',
+      'sanitize_callback' => 'solofolio_sanitize_email',
+    ) );
+
+	    $wp_customize->add_control( 'solofolio_font_head', array(
+	    	'label' => 'Headings',
+				'settings' => 'solofolio_font_head',
+				'section' => 'solofolio_typography_section',
+				'type'    => 'select',
+				'choices'  => $available_fonts
+			));
+
 		$wp_customize->add_setting( 'solofolio_font_body', array(
       'default'   => 'Roboto',
       'transport'   => 'refresh',

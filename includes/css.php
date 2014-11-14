@@ -8,6 +8,7 @@ function solofolio_css() {
   $button_size                    = get_theme_mod('solofolio_gallery_controls_size',          '30');
   $is_horizon                     = get_theme_mod('solofolio_layout_mode') ==                 'horizon';
   $font_logo = str_replace("+"," ", get_theme_mod('solofolio_font_logo',                      'Roboto'));
+  $font_head = str_replace("+"," ", get_theme_mod('solofolio_font_head',                      'Roboto'));
   $font_body = str_replace("+"," ", get_theme_mod('solofolio_font_body',                      'Roboto'));
   $navigation_font_size           = get_theme_mod('solofolio_navigation_font_size',           '14');
   $header_meta_font_size          = get_theme_mod('solofolio_header_meta_font_size',          '14');
@@ -39,6 +40,11 @@ function solofolio_css() {
     color: " . $body_font_color . ";
     font-family: '" . $font_body . "';
   }
+  .header h3,
+  .wrapper h1,
+  .wrapper h2,
+  .wrapper h3
+  { font-family: '" . $font_head . "' }
   h1, h2, h3, h4, h5, h6 { color: " . $blog_entry_title_color . " }
   a:link,
   a:visited,
