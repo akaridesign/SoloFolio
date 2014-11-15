@@ -18,7 +18,7 @@
 	</style>
 	<?php } ?>
 </head>
-<body <?php body_class(get_theme_mod('solofolio_layout_mode')); ?>>
+<body <?php body_class(solofolio_body_classes()); ?>>
 <div class="header pushy pushy-left">
 	<div class="header-inner">
 		<a class='menu-icon'><i class="fa fa-bars"></i></a>
