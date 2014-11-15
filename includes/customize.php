@@ -511,6 +511,20 @@ function solofolio_customize_register( $wp_customize )
       'priority' => 60,
 		));
 
+		$wp_customize->add_setting( 'solofolio_center_content', array(
+    	'default'    => '1',
+    	'sanitize_callback' => 'solofolio_sanitize_boolean',
+    	'transport'   => 'refresh',
+		));
+
+		$wp_customize->add_control( 'solofolio_center_content', array(
+			'settings' => 'solofolio_center_content',
+			'label'    => __('Center content', 'solofolio'),
+			'section'  => 'solofolio_options_section',
+			'type'     => 'checkbox',
+      'priority' => 60,
+		));
+
 		$wp_customize->add_setting( 'solofolio_layout_spacing', array(
 			'default' => '40',
 			'transport'   => 'refresh',

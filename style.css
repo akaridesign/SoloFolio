@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: A portfolio platform for creatives.
-Version: 7.0.32
+Version: 7.0.33
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -319,30 +319,6 @@ input:focus, textarea:focus, button:focus { outline: none }
   height: auto;
   width: 100%;
 }
-.entry,
-.entry .wp-caption,
-.entry .wp-caption img,
-.entry img,
-.content-index,
-.content-about,
-.content-parent,
-.content-about-content,
-.content-about-image,
-.post-meta,
-.entry p,
-.entry .aligncenter,
-.tag-links,
-.comments,
-.pagination-nav,
-.solofolio-gallery-title p,
-.page-template-story-php .wrapper p,
-.page-template-story-php .wrapper img,
-.page-template-story-php .wrapper .wp-caption,
-.vert-scroll img,
-.vert-scroll .wp-caption-text  {
-  margin-left: auto;
-  margin-right: auto;
-}
 /* Grid */
 .grid:after {
   content: "";
@@ -584,6 +560,30 @@ input:focus, textarea:focus, button:focus { outline: none }
 }
 
 @media only screen and (max-width: 1024px) {
+  .entry,
+  .entry .wp-caption,
+  .entry .wp-caption img,
+  .entry img,
+  .content-index,
+  .content-about,
+  .content-parent,
+  .content-about-content,
+  .content-about-image,
+  .post-meta,
+  .entry p,
+  .entry .aligncenter,
+  .tag-links,
+  .comments,
+  .pagination-nav,
+  .solofolio-gallery-title p,
+  .page-template-story-php .wrapper p,
+  .page-template-story-php .wrapper img,
+  .page-template-story-php .wrapper .wp-caption,
+  .vert-scroll img,
+  .vert-scroll .wp-caption-text  {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .wp-caption img, img.alignnone {
     width: 100%;
     height: auto;
@@ -714,6 +714,30 @@ input:focus, textarea:focus, button:focus { outline: none }
 
 /* Heights Layout */
 @media only screen and (min-width: 1025px) {
+  .heights.centered-content .entry,
+  .heights.centered-content .entry .wp-caption,
+  .heights.centered-content .entry .wp-caption img,
+  .heights.centered-content .entry img,
+  .heights.centered-content .content-index,
+  .heights.centered-content .content-about,
+  .heights.centered-content .content-parent,
+  .heights.centered-content .content-about-content,
+  .heights.centered-content .content-about-image,
+  .heights.centered-content .post-meta,
+  .heights.centered-content .entry p,
+  .heights.centered-content .entry .aligncenter,
+  .heights.centered-content .tag-links,
+  .heights.centered-content .comments,
+  .heights.centered-content .pagination-nav,
+  .heights.centered-content .solofolio-gallery-title p,
+  .heights.centered-content.page-template-story-php .wrapper p,
+  .heights.centered-content.page-template-story-php .wrapper img,
+  .heights.centered-content.page-template-story-php .wrapper .wp-caption,
+  .heights.centered-content .vert-scroll img,
+  .heights.centered-content .vert-scroll .wp-caption-text  {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .heights .header-meta { margin-bottom: 1em }
   .heights .solofolio-cyclereact-fill { background-position: 50% 50% }
   .heights .header { height: 100% }
@@ -773,6 +797,30 @@ input:focus, textarea:focus, button:focus { outline: none }
 
 /* Horizon Layout */
 @media only screen and (min-width: 1025px) {
+  .horizon .entry,
+  .horizon .entry .wp-caption,
+  .horizon .entry .wp-caption img,
+  .horizon .entry img,
+  .horizon .content-index,
+  .horizon .content-about,
+  .horizon .content-parent,
+  .horizon .content-about-content,
+  .horizon .content-about-image,
+  .horizon .post-meta,
+  .horizon .entry p,
+  .horizon .entry .aligncenter,
+  .horizon .tag-links,
+  .horizon .comments,
+  .horizon .pagination-nav,
+  .horizon .solofolio-gallery-title p,
+  .horizon.page-template-story-php .wrapper p,
+  .horizon.page-template-story-php .wrapper img,
+  .horizon.page-template-story-php .wrapper .wp-caption,
+  .horizon .vert-scroll img,
+  .horizon .vert-scroll .wp-caption-text  {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .horizon .wrapper { top: 85px }
   .horizon .header {
     display: table;
