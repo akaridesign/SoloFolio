@@ -205,9 +205,9 @@ function solofolio_css() {
       left: " . ($header_width + $layout_spacing) . "px;
     }
     @media only screen and (min-width: 2000px) {
-      .blog.heights .wrapper,
-      .page-template-about-php.heights .wrapper,
-      .page-template-parent-php.heights .wrapper {
+      .centered-content.blog.heights .wrapper,
+      .centered-content.page-template-about-php.heights .wrapper,
+      .centered-content.page-template-parent-php.heights .wrapper {
         left: " . $layout_spacing . "px;
       }
     }
