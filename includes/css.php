@@ -214,6 +214,7 @@ function solofolio_css() {
   }";
   if ($header_background_color == $background_color) {
     $styles .= "
+    .heights .wrapper { left: " . ($header_width) . "px }
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { left: " . ($header_width - $layout_spacing) . "px !important }";
