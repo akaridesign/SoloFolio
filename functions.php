@@ -78,15 +78,13 @@ function solofolio_load_fonts() {
   $fonts = array(get_theme_mod('solofolio_font_body', 'Source+Sans+Pro'),
                  get_theme_mod('solofolio_font_logo', 'Source+Sans+Pro'),
                  get_theme_mod('solofolio_font_head', 'Source+Sans+Pro'));
+  $families = implode( '|', array_unique($fonts) );
+  $fonts_url = '//fonts.googleapis.com/css?family=' . $families;
 
-  $i = 1;
-  foreach(array_unique($fonts) as $font) {
-    wp_enqueue_style('solofolio-font-' . $i, '//fonts.googleapis.com/css?family=' . $font);
-    $i++;
-  }
+  wp_enqueue_style('solofolio-fonts', $fonts_url);
   wp_enqueue_style( 'font-awesome',  get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0' );
 }
-add_action('wp_print_styles', 'solofolio_load_fonts');
+add_action('wp_enqueue_scripts', 'solofolio_load_fonts');
 
 function solofolio_scripts() {
   wp_enqueue_style( 'solofolio-style', get_stylesheet_uri() );
