@@ -29,14 +29,16 @@ foreach ($attachment_ids as $id) {
 
 	$output .= "\n\n<div class='vert-scroll' style=\"max-width:" . $xlarge[1] . "px; \" id='" . $i . "'>";
 
-	$output .= "<picture id='" . $i . "'>
-								<!--[if IE 9]><video style='display: none;''><![endif]-->
-								<source srcset='" . $xlarge[0] . "' media='(min-width: 450px) and (-webkit-min-device-pixel-ratio: 1.5)'>
-								<source srcset='" . $xlarge[0] . "' media='(min-width: 850px)'>
-								<source srcset='" . $large[0] . "' media='(min-width: 300px)'>
-								<!--[if IE 9]></video><![endif]-->
-								<img srcset='" . $large[0] . "' alt='" . $caption . "'>
-							</picture>";
+	$output .= "
+		<img
+    data-sizes=\"auto\"
+    data-srcset=\"
+    " . $large[0] . " " . $large[1]. "w,
+    " . $xlarge[0] . " " . $xlarge[1]. "w\"
+    class=\"lazyload\"
+    width=" . $xlarge[1] . "
+    height=" . $xlarge[2] . "/>
+	";
 
 	if ($captions != "false" && !empty($caption)) {
 		$output .= "<p class=\"wp-caption-text\">" .  $caption . "</p> ";
@@ -69,6 +71,7 @@ if (!function_exists('sl_vertscroll_js')) {
 
 wp_enqueue_script('picturefill', get_template_directory_uri().'/includes/gallery/js/picturefill.js', array(), null, true );
 wp_enqueue_script('solofolio-vertscroll', get_template_directory_uri().'/includes/gallery/js/vertscroll.js', array(), null, true );
+wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), null, true);
 wp_localize_script( 'solofolio-vertscroll', 'solofolioVertScroll', array(
 	'layoutSpacing' => get_theme_mod('solofolio_layout_spacing', '40')
 	)

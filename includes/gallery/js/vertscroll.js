@@ -17,11 +17,6 @@ var setResponsive = function () {
   } else {
     jQuery('.vert-scroll img').css('max-height', pageHeight);
   }
-
-  jQuery('.vert-scroll .wp-caption-text').each(function(i, elm) {
-    width = jQuery(this).parent().find('img').outerWidth();
-    jQuery(elm).css('max-width', width);
-  });
 }
 
 jQuery(window).load(function(){
@@ -30,4 +25,22 @@ jQuery(window).load(function(){
 
 jQuery(window).resize(setResponsive);
 
-document.createElement('picture');
+jQuery(document).on('lazybeforeunveil', (function(){
+  var onLoad = function(e){
+    var width = jQuery(e.target).outerWidth();
+    jQuery(e.target).parent().find('.wp-caption-text').css('max-width', width)
+    jQuery(e.target)
+      .fadeTo(800, 1)
+      .off('load error', onLoad)
+    ;
+  };
+  return function(e){
+    if(!e.isDefaultPrevented()){
+      jQuery(e.target)
+        .filter('img')
+        .css({opacity: 0})
+        .on('load error', onLoad)
+      ;
+    }
+  };
+})());
