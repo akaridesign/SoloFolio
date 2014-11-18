@@ -44,3 +44,8 @@ Unveil
 By Luis Almeida
 https://github.com/luis-almeida/unveil
 License: GPL2
+
+Lazysizes
+By Alexander Farkas
+https://github.com/aFarkas/lazysizes
+License: MIT
