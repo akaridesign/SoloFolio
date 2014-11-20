@@ -18,7 +18,11 @@ function solofolio_gallery_shortcode($output, $attr) {
 		'type'    => '',
 	), $attr));
 
-  $attachment_ids = explode(",", $attr['ids']);
+	if (isset($attr['ids'])) {
+  	$attachment_ids = explode(",", $attr['ids']);
+	} else {
+		$attachment_ids = array_keys( get_attached_media( 'image', $post->ID ));
+	}
 
 	$id = intval($id);
 
