@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.35");
+define("SOLOFOLIO_VERSION",     "7.0.36");
 
 include_once("includes/gallery.php");         // Gallery shortcode replacement
 include_once("includes/social-widget.php");   // Social media widget
@@ -37,7 +37,7 @@ function solofolio_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'solofolio_wp_title', 10, 2 );
 
 function solofolio_body_classes() {
-  $classes = array(get_theme_mod('solofolio_layout_mode'));
+  $classes = array(get_theme_mod('solofolio_layout_mode', 'heights'));
 
   if (get_theme_mod('solofolio_center_content', true)) {
     array_push($classes, "centered-content");
@@ -54,9 +54,8 @@ function solofolio_css_cache() {
     set_transient( 'solofolio_css', $data);
     set_transient( 'solofolio_version', constant('SOLOFOLIO_VERSION'));
   }
-  echo $data;
+  return $data;
 }
-add_action( 'wp_head', 'solofolio_css_cache', 199 );
 
 function solofolio_css_cache_reset() {
   delete_transient( 'solofolio_css' );
@@ -75,9 +74,9 @@ function filter_ptags_on_images($content) {
 add_filter('the_content', 'filter_ptags_on_images');
 
 function solofolio_load_fonts() {
-  $fonts = array(get_theme_mod('solofolio_font_body', 'Source+Sans+Pro'),
-                 get_theme_mod('solofolio_font_logo', 'Source+Sans+Pro'),
-                 get_theme_mod('solofolio_font_head', 'Source+Sans+Pro'));
+  $fonts = array(get_theme_mod('solofolio_font_body', 'Roboto'),
+                 get_theme_mod('solofolio_font_logo', 'Roboto'),
+                 get_theme_mod('solofolio_font_head', 'Roboto'));
   $families = implode( '|', array_unique($fonts) );
   $fonts_url = '//fonts.googleapis.com/css?family=' . $families;
 
