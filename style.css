@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: A portfolio platform for creatives.
-Version: 7.0.36
+Version: 7.0.37
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -79,8 +79,8 @@ img { border: none }
 /* Floats */
 .left { float: left }
 .right { float: right }
-.entry .alignleft { margin-right: 1rem; }
-.entry .alignright { margin-left: 1rem; }
+.entry .alignleft { padding-right: 1rem; }
+.entry .alignright { padding-left: 1rem; }
 /* Images */
 /* Links */
 a { font-weight: bold }
@@ -255,7 +255,6 @@ input:focus, textarea:focus, button:focus { outline: none }
   height: 225px;
 }
 .comments input, .comments textarea { width: 100%; }
-.entry h1 { text-align: center }
 .entry .aligncenter { display: block }
 .entry img {
   display: block;
@@ -525,9 +524,14 @@ input:focus, textarea:focus, button:focus { outline: none }
     bottom: 0;
     right: 0;
     top: 0;
-    margin: 0;
+    margin: 0 !important;
+    max-width: inherit !important;
     list-style-type: none;
     overflow-y: auto;
+  }
+  .solofolio-cyclereact-thumbs,
+  .children {
+    max-width: inherit !important;
   }
   .solofolio-cyclereact-thumbs .thumb {
     float: left;
@@ -726,7 +730,19 @@ input:focus, textarea:focus, button:focus { outline: none }
   .heights.centered-content .content-about-content,
   .heights.centered-content .content-about-image,
   .heights.centered-content .post-meta,
-  .heights.centered-content .entry p,
+  .heights.centered-content pre,
+  .heights.centered-content table,
+  .heights.centered-content address,
+  .heights.centered-content dl,
+  .heights.centered-content ol,
+  .heights.centered-content ul,
+  .heights.centered-content h1,
+  .heights.centered-content h2,
+  .heights.centered-content h3,
+  .heights.centered-content h4,
+  .heights.centered-content h5,
+  .heights.centered-content h6,
+  .heights.centered-content p,
   .heights.centered-content .entry .aligncenter,
   .heights.centered-content .tag-links,
   .heights.centered-content .comments,

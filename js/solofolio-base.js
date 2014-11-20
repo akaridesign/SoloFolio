@@ -5,8 +5,6 @@
 * By Joel Hawksley, included with SoloFolio Theme
 */
 jQuery(window).load(function(){
-  jQuery("p:has(img)").css('margin' , '0').css('padding' , '0');
-
   jQuery(".wrapper").fitVids();
 
   jQuery('.thumb img').retina();
