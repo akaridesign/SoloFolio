@@ -131,6 +131,18 @@ function solofolio_css() {
   .entry p,
   .entry .tag-links,
   .pagination-nav,
+  .centered-content pre,
+  .centered-content dl,
+  .centered-content ol,
+  .centered-content ul,
+  .centered-content address,
+  .centered-content table,
+  .centered-content h1,
+  .centered-content h2,
+  .centered-content h3,
+  .centered-content h4,
+  .centered-content h5,
+  .centered-content h6,
   .comments { max-width: " . $entry_text_width . "px }
 
   @media (min-width: 1025px) {
