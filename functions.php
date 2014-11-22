@@ -1,13 +1,13 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.39");
+define("SOLOFOLIO_VERSION",     "7.0.40");
 
-include_once("includes/gallery.php");         // Gallery shortcode replacement
-include_once("includes/social-widget.php");   // Social media widget
-include_once("includes/menu-widget.php");     // Custom menu widget
-include_once("includes/lazy-load.php");       // Lazy loader
-include_once("includes/customize.php");       // Customizer configuration
-include_once("includes/css.php");             // CSS constructor
+include_once("includes/gallery.php");             // Gallery shortcode replacement
+include_once("includes/social-widget.php");       // Social media widget
+include_once("includes/menu-widget.php");         // Custom menu widget
+include_once("includes/lazy-load.php");           // Lazy loader
+include_once("includes/customize.php");           // Customizer configuration
+include_once("includes/css.php");                 // CSS constructor
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
@@ -77,7 +77,12 @@ function solofolio_load_fonts() {
   $fonts = array(get_theme_mod('solofolio_font_body', 'Roboto'),
                  get_theme_mod('solofolio_font_logo', 'Roboto'),
                  get_theme_mod('solofolio_font_head', 'Roboto'));
-  $families = implode( '|', array_unique($fonts) );
+
+  function add_weights($f) {
+    return($f . ":400,700");
+  }
+
+  $families = implode( '|', array_map("add_weights", array_unique($fonts)) );
   $fonts_url = '//fonts.googleapis.com/css?family=' . $families;
 
   wp_enqueue_style('solofolio-fonts', $fonts_url);
