@@ -94,6 +94,7 @@ function solofolio_css() {
   .header .header-content .current_page_parent a { color: " . $navigation_link_color_hover . "; }
   .solofolio-cyclereact-sidebar.buttons a:hover,
   input:focus,
+  input:hover,
   textarea:focus,
   button:focus,
   button:hover { border-color: " . $navigation_link_color_hover . " }
@@ -104,7 +105,7 @@ function solofolio_css() {
     color: " . $body_font_color . ";
   }
   .comments { max-width: " . $entry_width . "px }
-  .comments h6 { color: " . $byline_color . " }
+  .comments small { color: " . $byline_color . " }
   .solofolio-cyclereact-sidebar { max-width: " . ($header_width - $layout_spacing) . "px }
   .solofolio-cyclereact-sidebar.buttons a {
     height: " . $button_size . "px;
