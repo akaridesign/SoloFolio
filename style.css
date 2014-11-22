@@ -57,7 +57,11 @@ body {
 dd, dt, li, p { line-height: 1.6em }
 p, table, ul, ol { margin: 1rem 0 }
 dd { margin-bottom: 1em }
-th, .bypostauthor { font-weight: bold }
+th { font-weight: bold }
+.bypostauthor {
+  border-left: 5px solid rgba(125,125,125,.2);
+  padding-left: .5rem;
+}
 th { background-color: rgba(125,125,125,.2) }
 td, th { padding: .5rem 1rem .5rem 1rem; border: 1px solid rgba(125,125,125,.2); }
 dt { font-weight: bold; margin-top: .5rem; }
@@ -111,8 +115,7 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
   font-weight: normal;
   line-height: 1;
   margin-bottom: 1rem;
@@ -123,7 +126,10 @@ h2 { font-size: 1.86rem }
 h3 { font-size: 1.28rem }
 h4 { font-size: 1rem }
 h5 { font-size: .85rem }
-h6 { font-size: .78rem }
+small {
+  font-size: .85rem;
+  line-height: 1;
+}
 .header-content h3 {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -227,11 +233,16 @@ input, textarea, button {
 }
 input:focus, textarea:focus, button:focus { outline: none }
 #respond label { display: block }
+.comments-area h3 { font-weight: bold }
 .comments { padding-bottom: 3rem }
 .comment { margin-bottom: 1rem }
+.comments h4.comment-author { margin-bottom: 0 }
 .comment-list li {
   list-style-type: none;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.comment-list li p:last-child {
+  margin-bottom: 0;
 }
 .comment-meta { margin-bottom: .5rem }
 .comments h4, .comments h4 a {
@@ -239,7 +250,7 @@ input:focus, textarea:focus, button:focus { outline: none }
   line-height: 1;
   margin-bottom: .25rem;
 }
-.comments h6 {
+.comments small {
   font-weight: normal;
   margin-bottom: 0;
 }

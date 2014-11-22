@@ -130,7 +130,7 @@ function solofolio_comments($comment, $args, $depth) {
 
       <div class="comment-meta commentmetadata">
         <h4 class="comment-author vcard"><?php printf(__('%s'), get_comment_author_link()) ?></h4>
-        <h6><?php printf(__('%1$s', 'solofolio'), get_comment_date('M. j, Y')) ?></h6>
+        <small><?php printf(__('%1$s', 'solofolio'), get_comment_date('M. j, Y')) ?></small>
         <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
       </div>
 
