@@ -3,7 +3,7 @@ class Solofolio_Custom_Menu extends WP_Widget {
   public function __construct() {
     parent::__construct(
       'solofolio-custom-menu',
-      __( 'SoloFolio Custom Menu', 'scm' ),
+      __( 'SoloFolio Dropdown Menu', 'scm' ),
       array(
         'classname'   =>  'Solofolio_Custom_Menu',
         'description' =>  __( 'Add a custom menu to display it using SoloFolio collapsed/dropdown design.', 'scm' )
