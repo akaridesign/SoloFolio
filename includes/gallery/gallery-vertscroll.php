@@ -69,9 +69,9 @@ if (!function_exists('sl_vertscroll_js')) {
 	}
 }
 
-wp_enqueue_script('picturefill', get_template_directory_uri().'/includes/gallery/js/picturefill.js', array(), null, true );
-wp_enqueue_script('solofolio-vertscroll', get_template_directory_uri().'/includes/gallery/js/vertscroll.js', array(), null, true );
-wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), null, true);
+wp_enqueue_script('picturefill', get_template_directory_uri().'/includes/gallery/js/picturefill.js', array(), constant('SOLOFOLIO_VERSION'), true );
+wp_enqueue_script('solofolio-vertscroll', get_template_directory_uri().'/includes/gallery/js/vertscroll.js', array(), constant('SOLOFOLIO_VERSION'), true );
+wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
 wp_localize_script( 'solofolio-vertscroll', 'solofolioVertScroll', array(
 	'layoutSpacing' => get_theme_mod('solofolio_layout_spacing', '40')
 	)
