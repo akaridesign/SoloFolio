@@ -32,6 +32,8 @@ jQuery(window).load(function(){
   });
 
   /* Open menu containing sub-page */
-  jQuery('.solofolio-custom-menu .menu').has('.current_page_item').show().addClass('visible');
+  if (solofolioBase.layoutMode == "heights") {
+    jQuery('.solofolio-custom-menu .menu').has('.current_page_item').show().addClass('visible');
+  }
 });
 
