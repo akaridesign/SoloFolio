@@ -21,4 +21,5 @@ if ( post_password_required() ) {
 													 'label_submit' => 'Post comment',
 													 'comment_notes_after' => '',
 													 'comment_notes_before' => '')); ?>
+	<div class="clear"></div>
 </div>
