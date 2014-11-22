@@ -17,18 +17,18 @@ var setResponsive = function () {
   } else {
     jQuery('.vert-scroll img').css('max-height', pageHeight);
   }
-}
 
-jQuery(window).load(function(){
-  setResponsive();
-});
+  jQuery('.vert-scroll img').each(function( i ) {
+    var width = jQuery(this).outerWidth();
+    jQuery(this).parent().find('.wp-caption-text').css('max-width', width)
+  });
+}
 
 jQuery(window).resize(setResponsive);
 
 jQuery(document).on('lazybeforeunveil', (function(){
   var onLoad = function(e){
-    var width = jQuery(e.target).outerWidth();
-    jQuery(e.target).parent().find('.wp-caption-text').css('max-width', width)
+    setResponsive();
     jQuery(e.target)
       .fadeTo(800, 1)
       .off('load error', onLoad)
