@@ -51,29 +51,28 @@ foreach ($attachment_ids as $id) {
 $output .= "</div>";
 
 add_action('wp_footer', 'sl_vertscroll_js');
-
 if (!function_exists('sl_vertscroll_js')) {
 	function sl_vertscroll_js() {
-		$output = "<style>
-				.content-page { max-width: none }
+		wp_enqueue_script('picturefill', get_template_directory_uri().'/includes/gallery/js/picturefill.js', array(), constant('SOLOFOLIO_VERSION'), true );
+		wp_enqueue_script('solofolio-vertscroll', get_template_directory_uri().'/includes/gallery/js/vertscroll.js', array(), constant('SOLOFOLIO_VERSION'), true );
+		wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
+		wp_localize_script( 'solofolio-vertscroll', 'solofolioVertScroll', array(
+			'layoutSpacing' => get_theme_mod('solofolio_layout_spacing', '40')
+			)
+		);
 
-				@media only screen and (max-width: 1024px) {
-					.content-page {
-						margin-left: auto;
-						margin-right: auto;
-					}
+		$output = "<style>
+			.content-page { max-width: none }
+
+			@media only screen and (max-width: 1024px) {
+				.content-page {
+					margin-left: auto;
+					margin-right: auto;
 				}
-			</style>";
+			}
+		</style>";
 
 	  echo $output;
 	}
 }
-
-wp_enqueue_script('picturefill', get_template_directory_uri().'/includes/gallery/js/picturefill.js', array(), constant('SOLOFOLIO_VERSION'), true );
-wp_enqueue_script('solofolio-vertscroll', get_template_directory_uri().'/includes/gallery/js/vertscroll.js', array(), constant('SOLOFOLIO_VERSION'), true );
-wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
-wp_localize_script( 'solofolio-vertscroll', 'solofolioVertScroll', array(
-	'layoutSpacing' => get_theme_mod('solofolio_layout_spacing', '40')
-	)
-);
 ?>

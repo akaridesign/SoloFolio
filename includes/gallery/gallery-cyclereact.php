@@ -38,7 +38,7 @@ $output .="</ul>";
 $output .="<div class=\"solofolio-cyclereact-stage\">";
 
 $output .="<div class=\"solofolio-cyclereact-gallery cycle-slideshow manual\"
-								data-cycle-slides=\".solofolio-cycelereact-slide\"
+								data-cycle-slides=\".solofolio-cyclereact-slide\"
 								data-cycle-prev=\".prev\"
 								data-cycle-next=\".next\"
 								data-cycle-fx=\"" . $galleryTransition . "\"
@@ -59,7 +59,7 @@ $i = 0;
 if ($galleryTitle || $galleryText) {
 	$i++;
 	$output .= "
-		<div class='solofolio-cycelereact-slide solofolio-cyclereact-title solofolio-gallery-title'
+		<div class='solofolio-cyclereact-slide solofolio-cyclereact-title solofolio-gallery-title'
 				 data-cycle-title=''
 				 data-cycle-hash='" .  $i . "'>
 			<div class='solofolio-cyclereact-title-wrapper'>
@@ -87,18 +87,26 @@ foreach ($attachment_ids as $id) {
 		$caption = wptexturize($attachment->post_content);
 	}
 
+	$output .= "\n\n<div class='solofolio-cyclereact-slide' id='" . $i . "'
+											 data-cycle-hash=\"" .  $i . "\"
+											 data-cycle-title=\"" .  $caption . "\">";
+
 	$output .= "
-		<div class=\"solofolio-cycelereact-slide solofolio-cyclereact-image\"
-				 data-cycle-title=\"" .  $caption . "\"
-				 data-cycle-hash=\"" .  $i . "\">
-			<div class=\"solofolio-cyclereact-fill picturefill-background\"
-					 style=\"max-width: ". $link5[1] . "px;\">
-				<div data-src=\"" . $link6[0] . "\"></div>
-				<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
-				<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\" style=\"max-width: 1800px;\"></div>
-				<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  $caption . "\"></noscript>
-			</div>
-		</div>";
+		<img
+    data-sizes=\"auto\"
+    data-srcset=\"
+    " . $link4[0] . " " . $link4[1]. "w,
+    " . $link5[0] . " " . $link5[1]. "w\"
+    class=\"lazyload\"
+    width=" . $link5[1] . "
+    height=" . $link5[2] . "/>
+	";
+
+	if ($captions != "false" && !empty($caption)) {
+		$output .= "<p class=\"wp-caption-text\">" .  $caption . "</p> ";
+	}
+
+	$output .= "</div>";
 }
 
 $output .= "</div>\n";
@@ -154,23 +162,33 @@ if (!function_exists('sl_cyclereact_js')) {
 		$output = "<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>";
 		$output .= "
 		<style type=\"text/css\">
-		.header .header-content .solofolio-cyclereact-sidebar {
-			display: block;
+		@media only screen and (min-width: 1025px) {
+			.header .header-content .solofolio-cyclereact-sidebar {
+				display: block;
+			}
+			body.page .wrapper {
+				padding: 0;
+				position: absolute;
+				overflow: hidden;
+				left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
+			}
 		}
-		body.page .wrapper {
-			padding: 0;
-			position: absolute;
-			overflow: hidden;
-			left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
-		}
+		@media only screen and (max-width: 1024px) {
+			.content-page {
+				max-width: inherit;
+			}
 		</style>
 		";
 
+		wp_enqueue_script('picturefill', get_template_directory_uri().'/includes/gallery/js/picturefill.js', array(), constant('SOLOFOLIO_VERSION'), true );
+		wp_enqueue_script('jquery-cycle2', get_template_directory_uri().'/includes/gallery/js/jquery.cycle2.js', array(), null, true );
+		wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
+		wp_enqueue_script('solofolio-cyclereact', get_template_directory_uri().'/includes/gallery/js/cyclereact.js', array('jquery'), null, true);
+		wp_localize_script( 'solofolio-cyclereact', 'solofolioGallery', array(
+			'layoutSpacing' => get_theme_mod('solofolio_layout_spacing', '40')
+			)
+		);
 	  echo $output;
 	}
 }
-
-wp_enqueue_script('jquery-cycle2', get_template_directory_uri().'/includes/gallery/js/jquery.cycle2.js', array(), null, true );
-wp_enqueue_script('picturefill-background', get_template_directory_uri().'/includes/gallery/js/picturefill-background.js', array('jquery'), null, true);
-wp_enqueue_script('solofolio-cyclereact', get_template_directory_uri().'/includes/gallery/js/cyclereact.js', array('jquery'), null, true);
 ?>
