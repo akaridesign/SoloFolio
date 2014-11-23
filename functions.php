@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.47");
+define("SOLOFOLIO_VERSION",     "7.0.48");
 
 include_once("includes/gallery.php");             // Gallery shortcode replacement
 include_once("includes/social-widget.php");       // Social media widget
@@ -39,7 +39,7 @@ add_filter( 'wp_title', 'solofolio_wp_title', 10, 2 );
 function solofolio_body_classes() {
   $classes = array(get_theme_mod('solofolio_layout_mode', 'heights'));
 
-  if (get_theme_mod('solofolio_center_content', true) || (get_theme_mod('solofolio_layout_mode') == 'heights')) {
+  if (get_theme_mod('solofolio_center_content', true) || (get_theme_mod('solofolio_layout_mode') == 'horizon')) {
     array_push($classes, "centered-content");
   }
 
