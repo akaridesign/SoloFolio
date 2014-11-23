@@ -1,25 +1,16 @@
 var setResponsive = function () {
   var pageHeight = jQuery(window).height();
-  var headerHeight = jQuery(".header").outerHeight();
-  var wrapperWidth = jQuery(".wrapper").innerWidth();
-  var imgHeight = jQuery(".cycle-slide-active div img").outerHeight();
-  var imgWidth = jQuery(".cycle-slide-active div img").outerWidth();
+  var spacing = solofolioGallery.layoutSpacing;
 
   var n = jQuery(".header").css('right');
 
   if (jQuery(window).width() < 1025) {
-    jQuery('.wrapper').css('top', headerHeight);
+    jQuery('.solofolio-cyclereact-slide img').css('max-height', pageHeight - spacing - spacing);
+    jQuery('.solofolio-cyclereact-slide img').each(function( i ) {
+      var width = jQuery(this).outerWidth();
+      jQuery(this).parent().find('.wp-caption-text').css('max-width', width)
+    });
   }
-
-  if (n == '0px') {
-    var barHeight = jQuery("#solofolio-cyclereact-bar").outerHeight();
-    jQuery('.solofolio-cyclereact-gallery img').css('max-height', pageHeight - barHeight - headerHeight);
-  }
-  else {
-    var barHeight = 0;
-    jQuery('.solofolio-cyclereact-gallery img').css('max-height', pageHeight - barHeight - 60);
-  }
-  jQuery('.solofolio-cyclereact-gallery img').css('max-width', wrapperWidth);
 }
 
 var showThumbs = function () {
@@ -37,16 +28,7 @@ jQuery(window).load(function(){
     jQuery(this).fadeIn('slow');
     jQuery('.solofolio-cyclereact-fill img').fadeIn('slow');
   });
-  jQuery('.solofolio-cyclereact-fill').each(function(i, elm) {
-    jQuery(elm).attr('data-picture', '');
-  });
 
-  jQuery('.picturefill-background').each(function(i, elm) {
-    url = jQuery(this).data().image
-    jQuery(elm).css('background-image', 'url(' + url + ')').fadeIn('slow');
-  });
-
-  window.picturefill();
   setResponsive();
   jQuery(".thumbs").click(function(){
     showThumbs();
@@ -99,3 +81,22 @@ jQuery.fn.cycle.transitions.fadeOutIn = {
     });
   }
 }
+
+jQuery(document).on('lazybeforeunveil', (function(){
+  var onLoad = function(e){
+    setResponsive();
+    jQuery(e.target)
+      .fadeTo(800, 1)
+      .off('load error', onLoad)
+    ;
+  };
+  return function(e){
+    if(!e.isDefaultPrevented()){
+      jQuery(e.target)
+        .filter('img')
+        .css({opacity: 0})
+        .on('load error', onLoad)
+      ;
+    }
+  };
+})());

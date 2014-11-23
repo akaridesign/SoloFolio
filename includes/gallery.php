@@ -26,8 +26,7 @@ function solofolio_gallery_shortcode($output, $attr) {
 
 	$id = intval($id);
 
-	if ( wp_is_mobile() ||
-			 is_home() ||
+	if ( is_home() ||
 			 is_single() ||
 			 is_page_template( 'about.php' ) ||
 			 is_page_template( 'parent.php' ) ||
