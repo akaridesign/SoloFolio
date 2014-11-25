@@ -132,6 +132,7 @@ function solofolio_css() {
   .entry p,
   .entry .tag-links,
   .pagination-nav,
+  .centered-content .more-link,
   .centered-content .wrapper pre,
   .centered-content .wrapper dl,
   .centered-content .wrapper ol,

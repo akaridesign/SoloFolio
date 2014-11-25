@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: A portfolio platform for creatives.
-Version: 7.0.50
+Version: 7.0.52
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -783,6 +783,7 @@ input:focus, textarea:focus, button:focus { outline: none }
   .centered-content .entry .wp-caption,
   .centered-content .entry .wp-caption img,
   .centered-content .entry img,
+  .centered-content .more-link,
   .centered-content .content-index,
   .centered-content .content-about,
   .centered-content .content-parent,
