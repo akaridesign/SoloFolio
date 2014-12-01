@@ -39,10 +39,10 @@ function solofolio_gallery_shortcode($output, $attr) {
 	switch ($type) {
 		case "vert-scroll":
 		case "react":
-			include("gallery/gallery-vertscroll.php");
+			include("gallery-vertscroll.php");
 			break;
 		default:
-			include("gallery/gallery-cyclereact.php");
+			include("gallery-cyclereact.php");
 			break;
 	}
 
