@@ -75,11 +75,8 @@ foreach ($attachment_ids as $id) {
 	$attachment = get_post($id);
 	$i++;
 
-	$link = wp_get_attachment_url($id);
-	$link3 = wp_get_attachment_image_src($id, 'thumbnail');
-	$link4 = wp_get_attachment_image_src($id, 'large');
-	$link5 = wp_get_attachment_image_src($id, 'xlarge');
-	$link6 = wp_get_attachment_image_src($id, 'medium');
+	$large = wp_get_attachment_image_src($id, 'large');
+	$xlarge = wp_get_attachment_image_src($id, 'xlarge');
 
 	if (!empty($attachment->post_excerpt)) {
 		$caption = wptexturize($attachment->post_excerpt);
@@ -95,11 +92,11 @@ foreach ($attachment_ids as $id) {
 		<img
     data-sizes=\"auto\"
     data-srcset=\"
-    " . $link4[0] . " " . $link4[1]. "w,
-    " . $link5[0] . " " . $link5[1]. "w\"
+    " . $large[0] . " " . $large[1]. "w,
+    " . $xlarge[0] . " " . $xlarge[1]. "w\"
     class=\"lazyload\"
-    width=" . $link5[1] . "
-    height=" . $link5[2] . "/>
+    width=" . $xlarge[1] . "
+    height=" . $xlarge[2] . "/>
 	";
 
 	if ($captions != "false" && !empty($caption)) {
