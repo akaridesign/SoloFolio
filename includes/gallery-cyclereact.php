@@ -27,11 +27,13 @@ foreach ($attachment_ids as $id) {
 		$caption = wptexturize($attachment->post_content);
 	}
 
-	$output .= "<li class=\"thumb\">
-								<a href=\"#" . $i . "\">
-									<img src=\"" . $thumb[0] . "\" data-retina=\"" . $medium[0] . "\" alt=\"" .  $caption . "\">
-								</a>
-							</li>";
+	$output .= "
+	<li class=\"thumb\">
+		<a href=\"#" . $i . "\">
+			<img src=\"" . $thumb[0] . "\" data-retina=\"" . $medium[0] . "\" alt=\"" .  $caption . "\">
+		</a>
+	</li>
+	";
 }
 
 $output .="</ul>";
