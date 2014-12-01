@@ -42,7 +42,7 @@ foreach ($attachment_ids as $id) {
 	";
 
 	if ($captions != "false" && !empty($caption)) {
-		$output .= "<p class=\"wp-caption-text\">" .  $caption . "</p> ";
+		$output .= "<p class=\"wp-caption-text\">" .  $caption . "</p>";
 	}
 
 	$output .= "</div>";
@@ -57,12 +57,10 @@ if (!function_exists('sl_vertscroll_js')) {
 		wp_enqueue_script('picturefill', get_template_directory_uri().'/js/picturefill.js', array(), constant('SOLOFOLIO_VERSION'), true );
 		wp_enqueue_script('solofolio-vertscroll', get_template_directory_uri().'/js/vertscroll.js', array(), constant('SOLOFOLIO_VERSION'), true );
 		wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
-		wp_localize_script( 'solofolio-vertscroll', 'solofolioVertScroll', array(
-			'layoutSpacing' => get_theme_mod('solofolio_layout_spacing', '40')
-			)
-		);
+		wp_localize_script( 'solofolio-vertscroll', 'solofolioVertScroll', array( 'layoutSpacing' => get_theme_mod('solofolio_layout_spacing', '40') ) );
 
-		$output = "<style>
+		$output = "
+		<style>
 			.content-page { max-width: none }
 
 			@media only screen and (max-width: 1024px) {
