@@ -1,17 +1,18 @@
 <?php
 
-$output .="<div class=\"solofolio-cyclereact-wrap\">";
-
-$output .="<ul class=\"solofolio-cyclereact-thumbs\">";
-
-$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
-$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
-$galleryTransition = get_theme_mod( 'solofolio_gallery_transition', 'fade');
+$galleryTitle 			= get_post_meta( $post->ID, 'solofolio-gallery-title', true );
+$galleryText 				= get_post_meta( $post->ID, 'solofolio-gallery-text', true );
+$galleryTransition 	= get_theme_mod( 'solofolio_gallery_transition', 'fade' );
 
 $i = 0;
 if ($galleryTitle || $galleryText) {
 	$i++;
 }
+
+$output .="
+<div class=\"solofolio-cyclereact-wrap\">
+	<ul class=\"solofolio-cyclereact-thumbs\">
+";
 
 foreach ($attachment_ids as $id) {
 	$attachment = get_post($id);
