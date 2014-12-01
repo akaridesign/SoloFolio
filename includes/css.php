@@ -104,6 +104,7 @@ function solofolio_css() {
     border: 1px solid " . $navigation_link_color . ";
     color: " . $body_font_color . ";
   }
+  .blog .fluid-width-video-wrapper,
   .comments { max-width: " . $entry_width . "px }
   .comments small { color: " . $byline_color . " }
   .solofolio-cyclereact-sidebar { max-width: " . ($header_width - $layout_spacing) . "px }
