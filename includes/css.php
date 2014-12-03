@@ -31,7 +31,7 @@ function solofolio_css() {
   $navigation_link_color_hover    = get_theme_mod('solofolio_navigation_link_color_hover',    '#333333');
   $base_url                       = get_template_directory_uri();
 
-  $styles = "<!-- v" . constant('SOLOFOLIO_VERSION') . " generated on: " . date(' Y-m-d \a\t H:i:s') . " --><style>";
+  $styles = "/* v" . constant('SOLOFOLIO_VERSION') . " generated on: " . date(' Y-m-d \a\t H:i:s') . " */ ";
 
   $styles .= "
   html { font-size: " . $body_font_size . "px }
@@ -234,9 +234,7 @@ function solofolio_css() {
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { left: " . ($header_width - $layout_spacing) . "px !important }";
   }
-  $styles .= "</style>";
 
-  $styles = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $styles);
   $styles = str_replace(': ', ':', $styles);
   $styles = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $styles);
 
