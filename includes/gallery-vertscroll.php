@@ -16,9 +16,7 @@ if ($galleryTitle || $galleryText) {
 	$i++;
 }
 
-foreach ($attachment_ids as $id) {
-	$attachment = get_post($id);
-
+foreach ( $attachments as $id => $attachment ) {
 	$large = wp_get_attachment_image_src($id, 'large');
 	$xlarge = wp_get_attachment_image_src($id, 'xlarge');
 
