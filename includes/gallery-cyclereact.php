@@ -14,8 +14,7 @@ $output .="
 	<ul class=\"solofolio-cyclereact-thumbs\">
 ";
 
-foreach ($attachment_ids as $id) {
-	$attachment = get_post($id);
+foreach ( $attachments as $id => $attachment ) {
 	$i++;
 
 	$thumb = wp_get_attachment_image_src($id, 'thumbnail');
@@ -77,8 +76,7 @@ if ($galleryTitle || $galleryText) {
 	";
 }
 
-foreach ($attachment_ids as $id) {
-	$attachment = get_post($id);
+foreach ( $attachments as $id => $attachment ) {
 	$i++;
 
 	$large = wp_get_attachment_image_src($id, 'large');
