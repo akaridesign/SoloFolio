@@ -396,6 +396,21 @@ function solofolio_customize_register( $wp_customize )
 				'priority' => '30',
 			) );
 
+		$wp_customize->add_setting( 'solofolio_blink_username', array(
+			'transport'   => 'refresh',
+			'default'           => '',
+			'sanitize_callback' => 'solofolio_sanitize_html',
+    ) );
+
+			$wp_customize->add_control( 'solofolio_blink_username', array(
+				'transport'   => 'postMessage',
+				'label' => 'Blink Username (for location)',
+				'settings' => 'solofolio_blink_username',
+				'section' => 'solofolio_content_section',
+				'type' => 'text',
+				'priority' => '30',
+			) );
+
 		$wp_customize->add_setting( 'solofolio_email', array(
 			'transport'   => 'postMessage',
 			'default'           => 'john@johndoe.com',

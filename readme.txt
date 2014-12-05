@@ -44,3 +44,8 @@ Lazysizes
 By Alexander Farkas
 https://github.com/aFarkas/lazysizes
 License: MIT
+
+Blink SDK
+By Blink
+http://blink.la
+License: MIT
