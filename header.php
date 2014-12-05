@@ -45,9 +45,9 @@
 		<div class="header-meta">
 			<?php if (get_theme_mod( 'solofolio_blink_username' ) != '') { ?>
 				<div class="header-location">
-					<blink-location data-id="<?php echo get_theme_mod( 'solofolio_blink_username' ); ?>">Loading...</blink-location>
+					<blink-location data-id="<?php echo get_theme_mod( 'solofolio_blink_username' ); ?>">Locating...</blink-location>
 				</div>
-			<?php } elseif (get_theme_mod( 'solofolio_location' ) != '') { ?>
+			<?php } if (get_theme_mod( 'solofolio_location' ) != '') { ?>
 				<div class="header-location">
 					<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
 				</div>
