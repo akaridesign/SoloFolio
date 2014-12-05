@@ -16,7 +16,7 @@ get_header();
   		<div class="content-about-content"><?php the_content(); ?></div>
   	<?php endwhile; ?>
 	<?php } ?>
-  <?php if (null !== get_post_meta($post->ID, 'blink_username', true)) { ?>
+  <?php if ('' !== get_post_meta($post->ID, 'blink_username', true)) { ?>
     <div class="blink-map">
       <iframe src="//blink.la/widgets/map/u/<?php echo get_post_meta($post->ID, 'blink_username', true); ?>?theme=google_maps" scrolling="no" frameborder="0" allowtransparency="true" style="border:none; overflow:hidden; width:600px; height:400px;"></iframe>
     </div>
