@@ -162,7 +162,6 @@ add_action('wp_footer', 'sl_cyclereact_footer');
 if (!function_exists('sl_cyclereact_footer')) {
 	function sl_cyclereact_footer() {
 		$output = "
-		<script type='text/javascript'>window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement('body'),g=e.createElement('div');g.id='mq-test-1';g.style.cssText='position:absolute;top:-100em';d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=''+h+''> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>
 		<style type='text/css'>
 		@media only screen and (min-width: 1025px) {
 			body.page .wrapper { left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px }

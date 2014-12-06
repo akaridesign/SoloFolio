@@ -99,6 +99,7 @@ add_action('wp_enqueue_scripts', 'solofolio_load_fonts');
 
 function solofolio_scripts() {
   wp_enqueue_style( 'solofolio-styles-base', get_stylesheet_uri(), null, constant('SOLOFOLIO_VERSION') );
+  wp_enqueue_script( 'matchmedia', get_template_directory_uri().'/js/matchmedia.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
   wp_enqueue_script( 'lazy-load', get_template_directory_uri().'/js/lazy-load.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
   wp_enqueue_script('jquery-retina', get_template_directory_uri().'/js/jquery.retina.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
   wp_enqueue_script('jquery-fitvids', get_template_directory_uri().'/js/jquery.fitvids.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
