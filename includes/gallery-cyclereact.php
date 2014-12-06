@@ -8,9 +8,7 @@ if ($galleryTitle || $galleryText) {
 }
 
 $output .="
-<div class=\"solofolio-cyclereact-wrap\">
-	<ul class=\"solofolio-cyclereact-thumbs\">
-";
+<div class='solofolio-cyclereact-wrap'><ul class='solofolio-cyclereact-thumbs'>";
 
 foreach ( $attachments as $id => $attachment ) {
 	$i++;
@@ -25,30 +23,28 @@ foreach ( $attachments as $id => $attachment ) {
 	}
 
 	$output .= "
-	<li class=\"thumb\">
-		<a href=\"#" . $i . "\">
-			<img src=\"" . $thumb[0] . "\" data-retina=\"" . $medium[0] . "\" alt=\"" .  $caption . "\">
-		</a>
-	</li>
+	<li class='thumb'><a href='#" . $i . "'>
+			<img src='" . $thumb[0] . "' data-retina='" . $medium[0] . "' alt='" .  $caption . "'>
+	</a></li>
 	";
 }
 
 $output .="
 </ul>
-<div class=\"solofolio-cyclereact-stage\">
+<div class='solofolio-cyclereact-stage'>
 ";
 
 $output .="
-<div class=\"solofolio-cyclereact-gallery cycle-slideshow manual\"
-	data-cycle-slides=\".solofolio-cyclereact-slide\"
-	data-cycle-prev=\".prev\"
-	data-cycle-next=\".next\"
-	data-cycle-fx=\"" . $galleryTransition . "\"
-	data-cycle-log=\"false\"
-	data-cycle-manual-speed=\"500\"
+<div class='solofolio-cyclereact-gallery cycle-slideshow manual'
+	data-cycle-slides='.solofolio-cyclereact-slide'
+	data-cycle-prev='.prev'
+	data-cycle-next='.next'
+	data-cycle-fx='" . $galleryTransition . "'
+	data-cycle-log='false'
+	data-cycle-manual-speed='500'
 	data-cycle-auto-height=false
-	data-cycle-caption=\".solofolio-cyclereact-caption\"
-	data-cycle-caption-template=\"{{cycleTitle}}\"";
+	data-cycle-caption='.solofolio-cyclereact-caption'
+	data-cycle-caption-template='{{cycleTitle}}'";
 	if ( $autoplay == "true" && isset( $speed )) {
 		$output .= "data-cycle-timeout=". $speed;
 	} else {
@@ -87,24 +83,21 @@ foreach ( $attachments as $id => $attachment ) {
 	}
 
 	$output .= "
-		<div class='solofolio-cyclereact-slide' id='" . $i . "'
-		data-cycle-hash=\"" .  $i . "\"
-		data-cycle-title=\"" .  $caption . "\">
-	";
+		<div class='solofolio-cyclereact-slide' id='" . $i . "' data-cycle-hash='" .  $i . "' data-cycle-title='" .  $caption . "'>";
 
 	$output .= "
 		<img
-    data-sizes=\"auto\"
-    data-srcset=\"
+    data-sizes='auto'
+    data-srcset='
     " . $large[0] . " " . $large[1]. "w,
-    " . $xlarge[0] . " " . $xlarge[1]. "w\"
-    class=\"lazyload\"
+    " . $xlarge[0] . " " . $xlarge[1]. "w'
+    class='lazyload'
     width=" . $xlarge[1] . "
     height=" . $xlarge[2] . "/>
 	";
 
 	if ($captions != "false" && !empty($caption)) {
-		$output .= "<p class=\"wp-caption-text\">" .  $caption . "</p> ";
+		$output .= "<p class='wp-caption-text'>" .  $caption . "</p> ";
 	}
 
 	$output .= "</div>";
@@ -113,20 +106,16 @@ foreach ( $attachments as $id => $attachment ) {
 $output .= "
 </div>
 
-<div class=\"solofolio-cyclereact-image-nav\">
-	<div class=\"solofolio-cyclereact-nav-right next\"></div>
-	<div class=\"solofolio-cyclereact-nav-left prev\"></div>
+<div class='solofolio-cyclereact-image-nav'>
+	<div class='solofolio-cyclereact-nav-right next'></div>
+	<div class='solofolio-cyclereact-nav-left prev'></div>
 </div>
 
-</div>
-</div>
-";
+</div></div>
 
-$output .= "
-<div class='solofolio-cyclereact-sidebar " . get_theme_mod( 'solofolio_gallery_controls', 'buttons') . "'>
-";
+<div class='solofolio-cyclereact-sidebar " . get_theme_mod( 'solofolio_gallery_controls', 'buttons') . "'>";
 
-if ($captions != "false"){
+if ($captions != "false") {
   $output .= '<p class="solofolio-cyclereact-caption"></p>';
 }
 
@@ -152,25 +141,23 @@ if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
 }
 
 $output .= "
-</div>
-";
+</div>";
 
 if ($thumbs == "true"){
 $output .= "
-<style type=\"text/css\">
+<style type='text/css'>
 .solofolio-cyclereact-thumbs { display: block }
 .solofolio-cyclereact-sidebar,
 .solofolio-cyclereact-stage { display: none }
 </style>";
 }
 
-add_action('wp_footer', 'sl_cyclereact_js');
-
-if (!function_exists('sl_cyclereact_js')) {
-	function sl_cyclereact_js() {
+add_action('wp_footer', 'sl_cyclereact_footer');
+if (!function_exists('sl_cyclereact_footer')) {
+	function sl_cyclereact_footer() {
 		$output = "
-		<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>
-		<style type=\"text/css\">
+		<script type='text/javascript'>window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement('body'),g=e.createElement('div');g.id='mq-test-1';g.style.cssText='position:absolute;top:-100em';d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=''+h+''> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>
+		<style type='text/css'>
 		@media only screen and (min-width: 1025px) {
 			.header .header-content .solofolio-cyclereact-sidebar { display: block }
 			body.page .wrapper {
