@@ -7,8 +7,24 @@ if ($galleryTitle || $galleryText) {
 	$i++;
 }
 
+function solofolio_cyclereact_thumbs_style($thumbs_toggle) {
+	if ($thumbs_toggle == "true") {
+		return "display: block";
+	} else {
+		return 'display: none';
+	}
+}
+
+function solofolio_cyclereact_gallery_style($thumbs_toggle) {
+	if ($thumbs_toggle == "true") {
+		return "display: none";
+	} else {
+		return 'display: block';
+	}
+}
+
 $output .="
-<div class='solofolio-cyclereact-wrap'><ul class='solofolio-cyclereact-thumbs'>";
+<div class='solofolio-cyclereact-wrap'><ul class='solofolio-cyclereact-thumbs' style='". solofolio_cyclereact_thumbs_style($thumbs) ."'>";
 
 foreach ( $attachments as $id => $attachment ) {
 	$i++;
@@ -26,7 +42,7 @@ foreach ( $attachments as $id => $attachment ) {
 
 $output .="
 </ul>
-<div class='solofolio-cyclereact-stage'>
+<div class='solofolio-cyclereact-stage' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>
 ";
 
 $output .="
@@ -103,7 +119,7 @@ $output .= "
 
 </div></div>
 
-<div class='solofolio-cyclereact-sidebar " . get_theme_mod( 'solofolio_gallery_controls', 'buttons') . "'>";
+<div class='solofolio-cyclereact-sidebar " . get_theme_mod( 'solofolio_gallery_controls', 'buttons') . "' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>";
 
 if ($captions != "false") {
   $output .= '<p class="solofolio-cyclereact-caption"></p>';
@@ -132,15 +148,6 @@ if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
 
 $output .= "
 </div>";
-
-if ($thumbs == "true"){
-$output .= "
-<style type='text/css'>
-.solofolio-cyclereact-thumbs { display: block }
-.solofolio-cyclereact-sidebar,
-.solofolio-cyclereact-stage { display: none }
-</style>";
-}
 
 add_action('wp_footer', 'sl_cyclereact_footer');
 if (!function_exists('sl_cyclereact_footer')) {

@@ -741,6 +741,9 @@ input:focus, textarea:focus, button:focus { outline: none }
     position: relative !important;
     margin: 1rem auto 0;
   }
+  .solofolio-cyclereact-stage[style] { display: block !important }
+  .solofolio-cyclereact-sidebar[style],
+  .solofolio-cyclereact-thumbs[style] { display: none !important }
   .solofolio-cyclereact-sidebar, .solofolio-cyclereact-image-nav {
     display: none;
   }
