@@ -23,29 +23,34 @@ function solofolio_cyclereact_gallery_style($thumbs_toggle) {
 	}
 }
 
-$output .="
-<div class='solofolio-cyclereact-wrap'><ul class='solofolio-cyclereact-thumbs' style='". solofolio_cyclereact_thumbs_style($thumbs) ."'>";
+function solofolio_cyclereact_thumbs($attachments, $thumbs, $i) {
+	$out = "<ul class='solofolio-cyclereact-thumbs' style='". solofolio_cyclereact_thumbs_style($thumbs) ."'>";
 
-foreach ( $attachments as $id => $attachment ) {
-	$i++;
+	foreach ( $attachments as $id => $attachment ) {
+		$i++;
 
-	$thumb = wp_get_attachment_image_src($id, 'thumbnail');
-	$medium = wp_get_attachment_image_src($id, 'medium');
-	$caption = solofolio_attachment_caption($attachment);
+		$thumb = wp_get_attachment_image_src($id, 'thumbnail');
+		$medium = wp_get_attachment_image_src($id, 'medium');
+		$caption = solofolio_attachment_caption($attachment);
 
-	$output .= "
-	<li class='thumb'><a href='#" . $i . "'>
-			<img src='" . $thumb[0] . "' data-retina='" . $medium[0] . "' alt='" .  $caption . "'>
-	</a></li>
-	";
+		$out .= "
+		<li class='thumb'><a href='#" . $i . "'>
+				<img src='" . $thumb[0] . "' data-retina='" . $medium[0] . "' alt='" .  $caption . "'>
+		</a></li>
+		";
+	}
+
+	$out .="
+	</ul>";
+
+	return $out;
 }
 
-$output .="
-</ul>
-<div class='solofolio-cyclereact-stage' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>
-";
+$output .="<div class='solofolio-cyclereact-wrap'>";
+$output .= solofolio_cyclereact_thumbs($attachments, $thumbs, $i);
 
 $output .="
+<div class='solofolio-cyclereact-stage' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>
 <div class='solofolio-cyclereact-gallery cycle-slideshow manual'
 	data-cycle-slides='.solofolio-cyclereact-slide'
 	data-cycle-prev='.prev'
