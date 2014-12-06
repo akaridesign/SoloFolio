@@ -46,6 +46,31 @@ function solofolio_cyclereact_thumbs($attachments, $thumbs, $i) {
 	return $out;
 }
 
+function solofolio_cyclereact_controls() {
+	if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
+		$out = '
+			<ul class="solofolio-cyclereact-controls">
+	      <li><a class="thumbs" href="#" data-cycle-cmd="pause">thumbs</a></li>
+	      <li><a class="prev" href="#">prev</a></li>
+	      <li><a class="next" href="#">next</a></li>
+	      <li><span class="solofolio-cyclereact-count"></span></li>
+	    </ul>
+	  ';
+	} else {
+		$out= '
+			<div class="solofolio-cyclereact-controls">
+	      <a class="thumbs" href="#" data-cycle-cmd="pause"><i class="fa fa-th"></i></a>
+	      <span class="arrows">
+	        <a class="prev" href="#"><i class="fa fa-caret-left"></i></a>
+	        <a class="next" href="#"><i class="fa fa-caret-right"></i></a>
+	      </span>
+	    </div>
+	  ';
+	}
+
+	return $out;
+}
+
 $output .="<div class='solofolio-cyclereact-wrap'>";
 $output .= solofolio_cyclereact_thumbs($attachments, $thumbs, $i);
 
@@ -130,29 +155,8 @@ if ($captions != "false") {
   $output .= '<p class="solofolio-cyclereact-caption"></p>';
 }
 
-if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
-	$output .= '
-		<ul class="solofolio-cyclereact-controls">
-      <li><a class="thumbs" href="#" data-cycle-cmd="pause">thumbs</a></li>
-      <li><a class="prev" href="#">prev</a></li>
-      <li><a class="next" href="#">next</a></li>
-      <li><span class="solofolio-cyclereact-count"></span></li>
-    </ul>
-  ';
-} else {
-	$output .= '
-		<div class="solofolio-cyclereact-controls">
-      <a class="thumbs" href="#" data-cycle-cmd="pause"><i class="fa fa-th"></i></a>
-      <span class="arrows">
-        <a class="prev" href="#"><i class="fa fa-caret-left"></i></a>
-        <a class="next" href="#"><i class="fa fa-caret-right"></i></a>
-      </span>
-    </div>
-  ';
-}
-
-$output .= "
-</div>";
+$output .= solofolio_cyclereact_controls();
+$output .= "</div>";
 
 add_action('wp_footer', 'sl_cyclereact_footer');
 if (!function_exists('sl_cyclereact_footer')) {
