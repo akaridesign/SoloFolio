@@ -18,21 +18,21 @@ foreach ( $attachments as $id => $attachment ) {
 	$xlarge = wp_get_attachment_image_src($id, 'xlarge');
 	$caption = solofolio_attachment_caption($attachment);
 
-	$output .= "\n\n<div class='vert-scroll' style=\"max-width:" . $xlarge[1] . "px; \" id='" . $i . "'>";
+	$output .= "<div class='vert-scroll' style='max-width:" . $xlarge[1] . "px' id='" . $i . "'>";
 
 	$output .= "
 		<img
-    data-sizes=\"auto\"
-    data-srcset=\"
+    data-sizes='auto'
+    data-srcset='
     " . $large[0] . " " . $large[1]. "w,
-    " . $xlarge[0] . " " . $xlarge[1]. "w\"
-    class=\"lazyload\"
+    " . $xlarge[0] . " " . $xlarge[1]. "w'
+    class='lazyload'
     width=" . $xlarge[1] . "
     height=" . $xlarge[2] . "/>
 	";
 
 	if ($captions != "false" && !empty($caption)) {
-		$output .= "<p class=\"wp-caption-text\">" .  $caption . "</p>";
+		$output .= "<p class='wp-caption-text'>" .  $caption . "</p>";
 	}
 
 	$output .= "</div>";
