@@ -1,7 +1,5 @@
 <?php
 
-$galleryTitle 			= get_post_meta( $post->ID, 'solofolio-gallery-title', true );
-$galleryText 				= get_post_meta( $post->ID, 'solofolio-gallery-text', true );
 $galleryTransition 	= get_theme_mod( 'solofolio_gallery_transition', 'fade' );
 
 $i = 0;

@@ -1,8 +1,5 @@
 <?php
 
-$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
-$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
-
 $i = 0;
 
 $output = "<div class='solofolio-vert-scroll-gallery'>";
