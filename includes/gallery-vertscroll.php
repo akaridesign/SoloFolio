@@ -16,12 +16,7 @@ if ($galleryTitle || $galleryText) {
 foreach ( $attachments as $id => $attachment ) {
 	$large = wp_get_attachment_image_src($id, 'large');
 	$xlarge = wp_get_attachment_image_src($id, 'xlarge');
-
-	if (!empty($attachment->post_excerpt)) {
-		$caption = wptexturize($attachment->post_excerpt);
-	} else {
-		$caption = wptexturize($attachment->post_content);
-	}
+	$caption = solofolio_attachment_caption($attachment);
 
 	$output .= "\n\n<div class='vert-scroll' style=\"max-width:" . $xlarge[1] . "px; \" id='" . $i . "'>";
 

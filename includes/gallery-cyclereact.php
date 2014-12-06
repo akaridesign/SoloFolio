@@ -15,12 +15,7 @@ foreach ( $attachments as $id => $attachment ) {
 
 	$thumb = wp_get_attachment_image_src($id, 'thumbnail');
 	$medium = wp_get_attachment_image_src($id, 'medium');
-
-	if (!empty($attachment->post_excerpt)) {
-		$caption = wptexturize($attachment->post_excerpt);
-	} else {
-		$caption = wptexturize($attachment->post_content);
-	}
+	$caption = solofolio_attachment_caption($attachment);
 
 	$output .= "
 	<li class='thumb'><a href='#" . $i . "'>
@@ -75,12 +70,7 @@ foreach ( $attachments as $id => $attachment ) {
 
 	$large = wp_get_attachment_image_src($id, 'large');
 	$xlarge = wp_get_attachment_image_src($id, 'xlarge');
-
-	if (!empty($attachment->post_excerpt)) {
-		$caption = wptexturize($attachment->post_excerpt);
-	} else {
-		$caption = wptexturize($attachment->post_content);
-	}
+	$caption = solofolio_attachment_caption($attachment);
 
 	$output .= "
 		<div class='solofolio-cyclereact-slide' id='" . $i . "' data-cycle-hash='" .  $i . "' data-cycle-title='" .  $caption . "'>";
