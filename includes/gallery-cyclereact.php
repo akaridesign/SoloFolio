@@ -71,6 +71,12 @@ function solofolio_cyclereact_controls() {
 	return $out;
 }
 
+function solofolio_cyclereact_caption_container($captions) {
+	if ($captions != "false") {
+  	return '<p class="solofolio-cyclereact-caption"></p>';
+	}
+}
+
 $output .="<div class='solofolio-cyclereact-wrap'>";
 $output .= solofolio_cyclereact_thumbs($attachments, $thumbs, $i);
 
@@ -151,10 +157,7 @@ $output .= "
 
 <div class='solofolio-cyclereact-sidebar " . get_theme_mod( 'solofolio_gallery_controls', 'buttons') . "' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>";
 
-if ($captions != "false") {
-  $output .= '<p class="solofolio-cyclereact-caption"></p>';
-}
-
+$output .= solofolio_cyclereact_caption_container($captions);
 $output .= solofolio_cyclereact_controls();
 $output .= "</div>";
 
