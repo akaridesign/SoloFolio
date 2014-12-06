@@ -1,0 +1,10 @@
+@media only screen and (min-width: 1025px) {
+  .header .header-content .solofolio-cyclereact-sidebar { display: block }
+  body.page .wrapper {
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 1024px) { .content-page { max-width: inherit } }

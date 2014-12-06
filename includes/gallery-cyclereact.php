@@ -149,18 +149,10 @@ if (!function_exists('sl_cyclereact_footer')) {
 		<script type='text/javascript'>window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement('body'),g=e.createElement('div');g.id='mq-test-1';g.style.cssText='position:absolute;top:-100em';d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=''+h+''> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>
 		<style type='text/css'>
 		@media only screen and (min-width: 1025px) {
-			.header .header-content .solofolio-cyclereact-sidebar { display: block }
-			body.page .wrapper {
-				padding: 0;
-				position: absolute;
-				overflow: hidden;
-				left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
-			}
+			body.page .wrapper { left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px }
 		}
-		@media only screen and (max-width: 1024px) { .content-page { max-width: inherit } }
-		</style>
-		";
-
+		</style>";
+		wp_enqueue_style( 'solofolio-cyclereact', get_template_directory_uri().'/css/cyclereact.css', null, constant('SOLOFOLIO_VERSION') );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri().'/js/picturefill.js', array(), constant('SOLOFOLIO_VERSION'), true );
 		wp_enqueue_script( 'jquery-cycle2', get_template_directory_uri().'/js/jquery.cycle2.js', array(), null, true );
 		wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true );
