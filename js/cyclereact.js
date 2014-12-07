@@ -5,11 +5,17 @@ var setResponsive = function () {
   var n = jQuery(".header").css('right');
 
   if (jQuery(window).width() < 1025) {
+    jQuery('.solofolio-cyclereact-gallery').cycle('pause');
+
     jQuery('.solofolio-cyclereact-slide img').css('max-height', pageHeight - spacing - spacing);
     jQuery('.solofolio-cyclereact-slide img').each(function( i ) {
       var width = jQuery(this).outerWidth();
       jQuery(this).parent().find('.wp-caption-text').css('max-width', width)
     });
+  }
+
+  if (jQuery(window).width() > 1024) {
+    jQuery('.solofolio-cyclereact-gallery').cycle('resume');
   }
 }
 
