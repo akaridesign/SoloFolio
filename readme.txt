@@ -25,6 +25,11 @@ By Scott Jehl
 http://scottjehl.github.io/picturefill
 License: MIT
 
+Matchmedia
+By Paul Irish
+http://github.com/paulirish/matchMedia.js
+License: MIT
+
 Font Awesome
 By Dave Gandy
 http://fortawesome.github.io/

@@ -12,7 +12,7 @@ function solofolio_gallery_shortcode($output, $attr) {
     'exclude'    => '',
 		'order'      => 'ASC',
     'orderby'    => 'menu_order ID',
-		'speed'    => '',
+		'speed'    => '3000',
 		'thumbs'    => '',
 		'transition'    => '',
 		'type'    => '',
@@ -53,6 +53,10 @@ function solofolio_gallery_shortcode($output, $attr) {
 		 ) {
 		$type = "vert-scroll";
 	}
+
+	$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
+	$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
+	$hasTitleSlide = (!empty($galleryTitle) || !empty($galleryText));
 
 	switch ($type) {
 		case "vert-scroll":

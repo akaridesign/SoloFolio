@@ -5,11 +5,17 @@ var setResponsive = function () {
   var n = jQuery(".header").css('right');
 
   if (jQuery(window).width() < 1025) {
+    jQuery('.solofolio-cyclereact-gallery').cycle('pause');
+
     jQuery('.solofolio-cyclereact-slide img').css('max-height', pageHeight - spacing - spacing);
     jQuery('.solofolio-cyclereact-slide img').each(function( i ) {
       var width = jQuery(this).outerWidth();
       jQuery(this).parent().find('.wp-caption-text').css('max-width', width)
     });
+  }
+
+  if (jQuery(window).width() > 1024) {
+    jQuery('.solofolio-cyclereact-gallery').cycle('resume');
   }
 }
 
@@ -18,7 +24,7 @@ var showThumbs = function () {
   jQuery(".solofolio-cyclereact-thumbs").show();
 }
 
-var hideThumbs = function () {
+var showGallery = function () {
   jQuery(".solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage").show();
   jQuery(".solofolio-cyclereact-thumbs").hide();
 }
@@ -26,7 +32,6 @@ var hideThumbs = function () {
 jQuery(window).load(function(){
   jQuery('.solofolio-cyclereact-thumbs img').load(function() {
     jQuery(this).fadeIn('slow');
-    jQuery('.solofolio-cyclereact-fill img').fadeIn('slow');
   });
 
   setResponsive();
@@ -34,15 +39,14 @@ jQuery(window).load(function(){
     showThumbs();
   });
   jQuery(".thumb a").click(function(){
-    hideThumbs();
+    showGallery();
   });
 });
 
 jQuery(window).resize(setResponsive);
 
 jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-after', function( event, opts ) {
-  jQuery(".solofolio-cyclereact-thumbs").hide();
-  jQuery(".solofolio-cyclereact-stage, .solofolio-cyclereact-sidebar").show();
+  showGallery();
 });
 
 jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-before', function( event, opts ) {

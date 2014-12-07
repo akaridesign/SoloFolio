@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: A portfolio platform for creatives.
-Version: 7.0.57
+Version: 7.0.59
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -464,15 +464,6 @@ input:focus, textarea:focus, button:focus { outline: none }
     max-width: 100%;
     margin: 0 auto;
     position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-  .solofolio-cyclereact-fill {
-    height: 100%;
-    position: relative;
-    width: 100%;
   }
   .solofolio-cyclereact-title {
     position: fixed !important;
@@ -515,13 +506,6 @@ input:focus, textarea:focus, button:focus { outline: none }
     margin-top: .5rem;
   }
   .solofolio-cyclereact-image { z-index: 2 }
-  .solofolio-cyclereact-fill {
-    text-align: center;
-    margin: 0 auto;
-  }
-  .solofolio-cyclereact-fill {
-  -webkit-backface-visibility: hidden;
-  }
   .solofolio-cyclereact-nav-left,
   .solofolio-cyclereact-nav-right {
     height: 100%;
@@ -728,7 +712,6 @@ input:focus, textarea:focus, button:focus { outline: none }
   .pagination-nav h4 { padding: 0 }
   .wrapper h1 { font-size: 22px }
   .vert-scroll .wp-caption-text { max-width: none }
-  .solofolio-cyclereact-fill { background-position: 50% 50% }
   .solofolio-gallery-title h2 { text-align: center }
   .solofolio-cyclereact-slide img {
     max-width: 100%;
@@ -741,6 +724,9 @@ input:focus, textarea:focus, button:focus { outline: none }
     position: relative !important;
     margin: 1rem auto 0;
   }
+  .solofolio-cyclereact-stage[style] { display: block !important }
+  .solofolio-cyclereact-sidebar[style],
+  .solofolio-cyclereact-thumbs[style] { display: none !important }
   .solofolio-cyclereact-sidebar, .solofolio-cyclereact-image-nav {
     display: none;
   }
@@ -824,7 +810,6 @@ input:focus, textarea:focus, button:focus { outline: none }
   }
   .centered-content iframe { margin: 1rem auto !important }
   .heights .header-meta { margin-bottom: 1em }
-  .heights .solofolio-cyclereact-fill { background-position: 50% 50% }
   .heights .header { height: 100% }
   .heights .header-inner {
     position: absolute;
@@ -879,6 +864,12 @@ input:focus, textarea:focus, button:focus { outline: none }
     background-color: rgba(0,0,0,0.5);
   }
   .heights.page-template-story-php.pushy-active { overflow-x: hidden }
+  .heights .solofolio-cyclereact-slide img {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
 }
 
 /* Horizon Layout */
@@ -996,6 +987,5 @@ input:focus, textarea:focus, button:focus { outline: none }
     top: 0;
     width: 100%;
   }
-  .horizon .solofolio-cyclereact-fill { background-position: 50% top }
 }
 
