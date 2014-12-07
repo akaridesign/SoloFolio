@@ -24,7 +24,7 @@ var showThumbs = function () {
   jQuery(".solofolio-cyclereact-thumbs").show();
 }
 
-var hideThumbs = function () {
+var showGallery = function () {
   jQuery(".solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage").show();
   jQuery(".solofolio-cyclereact-thumbs").hide();
 }
@@ -40,15 +40,14 @@ jQuery(window).load(function(){
     showThumbs();
   });
   jQuery(".thumb a").click(function(){
-    hideThumbs();
+    showGallery();
   });
 });
 
 jQuery(window).resize(setResponsive);
 
 jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-after', function( event, opts ) {
-  jQuery(".solofolio-cyclereact-thumbs").hide();
-  jQuery(".solofolio-cyclereact-stage, .solofolio-cyclereact-sidebar").show();
+  showGallery();
 });
 
 jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-before', function( event, opts ) {
