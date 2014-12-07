@@ -177,7 +177,7 @@ function solofolio_css() {
     }
   }
   .heights .solofolio-cyclereact-sidebar { padding-right: " . $layout_spacing . "px }
-  .heights .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }
+  .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }
   @media (min-width: 1025px) {
     .heights .wrapper {
       bottom: " . $layout_spacing . "px;
