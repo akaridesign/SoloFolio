@@ -44,24 +44,11 @@ $output .= "</div>";
 add_action('wp_footer', 'sl_vertscroll_js');
 if (!function_exists('sl_vertscroll_js')) {
 	function sl_vertscroll_js() {
+		wp_enqueue_style( 'solofolio-vertscroll', get_template_directory_uri().'/css/vertscroll.css', null, constant('SOLOFOLIO_VERSION') );
 		wp_enqueue_script('picturefill', get_template_directory_uri().'/js/picturefill.js', array(), constant('SOLOFOLIO_VERSION'), true );
 		wp_enqueue_script('solofolio-vertscroll', get_template_directory_uri().'/js/vertscroll.js', array(), constant('SOLOFOLIO_VERSION'), true );
 		wp_enqueue_script( 'lazysizes', get_template_directory_uri().'/js/lazysizes.js', array('jquery'), constant('SOLOFOLIO_VERSION'), true);
 		wp_localize_script( 'solofolio-vertscroll', 'solofolioVertScroll', array( 'layoutSpacing' => get_theme_mod('solofolio_layout_spacing', '40') ) );
-
-		$output = "
-		<style>
-			.content-page { max-width: none }
-
-			@media only screen and (max-width: 1024px) {
-				.content-page {
-					margin-left: auto;
-					margin-right: auto;
-				}
-			}
-		</style>";
-
-	  echo $output;
 	}
 }
 ?>
