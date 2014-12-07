@@ -32,7 +32,6 @@ var showGallery = function () {
 jQuery(window).load(function(){
   jQuery('.solofolio-cyclereact-thumbs img').load(function() {
     jQuery(this).fadeIn('slow');
-    jQuery('.solofolio-cyclereact-fill img').fadeIn('slow');
   });
 
   setResponsive();
