@@ -12,7 +12,7 @@ function solofolio_gallery_shortcode($output, $attr) {
     'exclude'    => '',
 		'order'      => 'ASC',
     'orderby'    => 'menu_order ID',
-		'speed'    => '',
+		'speed'    => '3000',
 		'thumbs'    => '',
 		'transition'    => '',
 		'type'    => '',

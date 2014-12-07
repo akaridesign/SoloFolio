@@ -77,6 +77,14 @@ function solofolio_cyclereact_caption_container($captions) {
 	}
 }
 
+function solofolio_cyclereact_timeout($autoplay, $speed) {
+	if ($autoplay == "true") {
+		return $speed;
+	} else {
+		return 0;
+	}
+}
+
 $output .="<div class='solofolio-cyclereact-wrap'>";
 $output .= solofolio_cyclereact_thumbs($attachments, $thumbs, $i);
 
@@ -91,13 +99,8 @@ $output .="
 	data-cycle-manual-speed='500'
 	data-cycle-auto-height=false
 	data-cycle-caption='.solofolio-cyclereact-caption'
-	data-cycle-caption-template='{{cycleTitle}}'";
-	if ( $autoplay == "true" && isset( $speed )) {
-		$output .= "data-cycle-timeout=". $speed;
-	} else {
-		$output .= "data-cycle-timeout=0\n";
-	}
-$output .= ">\n\n";
+	data-cycle-caption-template='{{cycleTitle}}'
+	data-cycle-timeout='" . solofolio_cyclereact_timeout($autoplay, $speed) . "'>";
 
 $i = 0;
 
