@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.57");
+define("SOLOFOLIO_VERSION",     "7.0.58");
 
 include_once("includes/helpers.php");             // Helper functions
 include_once("includes/gallery.php");             // Gallery shortcode replacement
