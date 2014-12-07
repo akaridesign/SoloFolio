@@ -56,6 +56,7 @@ function solofolio_gallery_shortcode($output, $attr) {
 
 	$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
 	$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
+	$hasTitleSlide = (!empty($galleryTitle) || !empty($galleryText));
 
 	switch ($type) {
 		case "vert-scroll":

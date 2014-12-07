@@ -3,7 +3,7 @@
 $galleryTransition 	= get_theme_mod( 'solofolio_gallery_transition', 'fade' );
 
 $i = 0;
-if ($galleryTitle || $galleryText) {
+if ($hasTitleSlide) {
 	$i++;
 }
 
@@ -104,7 +104,7 @@ $output .="
 
 $i = 0;
 
-if ($galleryTitle || $galleryText) {
+if ($hasTitleSlide) {
 	$i++;
 	$output .= "
 	<div class='solofolio-cyclereact-slide solofolio-cyclereact-title solofolio-gallery-title'

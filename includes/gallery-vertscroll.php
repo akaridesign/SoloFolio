@@ -4,7 +4,7 @@ $i = 0;
 
 $output = "<div class='solofolio-vert-scroll-gallery'>";
 
-if ($galleryTitle || $galleryText) {
+if ($hasTitleSlide) {
 	$output .= "
 		<div class='solofolio-gallery-title solofolio-vertscroll-title' id='" . $i . "'>
 			<h2>" . $galleryTitle . "</h2>
