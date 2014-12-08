@@ -105,7 +105,6 @@ function solofolio_css() {
     color: " . $body_font_color . ";
   }
   .blog .fluid-width-video-wrapper,
-  .comments { max-width: " . $entry_width . "px }
   .comments small { color: " . $byline_color . " }
   .solofolio-cyclereact-sidebar { max-width: " . ($header_width - $layout_spacing) . "px }
   .solofolio-cyclereact-sidebar.buttons a {
@@ -145,8 +144,7 @@ function solofolio_css() {
   .centered-content .wrapper h3,
   .centered-content .wrapper h4,
   .centered-content .wrapper h5,
-  .centered-content .wrapper h6,
-  .comments { max-width: " . $entry_text_width . "px }
+  .centered-content .wrapper h6 { max-width: " . $entry_text_width . "px }
 
   @media (min-width: 1025px) {
     .horizon .header-content h3 { line-height: " . $navigation_header_font_size . "px }
