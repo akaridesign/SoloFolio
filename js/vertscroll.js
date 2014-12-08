@@ -9,13 +9,13 @@ var setResponsive = function () {
 
   if (wrapperWidth > 600) {
     if (n == '0px') {
-      jQuery('.vert-scroll img').css('max-height', pageHeight - headerHeight - layoutSpacing - layoutSpacing);
+      jQuery('.vert-scroll-window img').css('max-height', pageHeight - headerHeight - layoutSpacing - layoutSpacing);
     }
     else {
-      jQuery('.vert-scroll img').css('max-height', pageHeight - layoutSpacing - layoutSpacing);
+      jQuery('.vert-scroll-window img').css('max-height', pageHeight - layoutSpacing - layoutSpacing);
     }
   } else {
-    jQuery('.vert-scroll img').css('max-height', pageHeight);
+    jQuery('.vert-scroll-window img').css('max-height', pageHeight);
   }
 
   jQuery('.vert-scroll img').each(function( i ) {

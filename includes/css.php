@@ -153,8 +153,9 @@ function solofolio_css() {
     .horizon .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }
     .horizon .wrapper {
       bottom: " . $layout_spacing . "px;
-      top: " . ($layout_spacing + 45) . "px;
+      top: " . ($layout_spacing + 40) . "px;
       right: " . $layout_spacing . "px;
+      left: " . $layout_spacing . "px;
     }
     .horizon .logo { width: " . $logo_width . "px }
     .horizon.admin-bar.page .wrapper { top: " . ($layout_spacing + 77) . "px }
@@ -174,6 +175,11 @@ function solofolio_css() {
     .horizon .solofolio-cyclereact-thumbs {
       top: 35px;
       padding: " . $layout_spacing . "px;
+    }
+    .horizon.page-template-story-php .wrapper { margin-top: -" . $layout_spacing . "px }
+    .horizon.page-template-story-php .vert-scroll-full {
+      margin-left: -" . $layout_spacing . "px;
+      margin-right: -" . $layout_spacing . "px;
     }
   }
   .heights .solofolio-cyclereact-sidebar { padding-right: " . $layout_spacing . "px }

@@ -5,17 +5,18 @@ function solofolio_gallery_shortcode($output, $attr) {
 	global $post, $wp_locale;
 
 	extract(shortcode_atts(array(
-		'autoplay' => '',
-		'captions' => '',
-		'id'         => $post->ID,
-		'include'    => '',
-    'exclude'    => '',
-		'order'      => 'ASC',
-    'orderby'    => 'menu_order ID',
-		'speed'    => '3000',
-		'thumbs'    => '',
-		'transition'    => '',
-		'type'    => '',
+		'autoplay' 		=> '',
+		'captions' 		=> '',
+		'id'         	=> $post->ID,
+		'include'    	=> '',
+    'exclude'    	=> '',
+		'order'      	=> 'ASC',
+    'orderby'    	=> 'menu_order ID',
+    'size'				=> 'window',
+		'speed'    		=> '3000',
+		'thumbs'    	=> '',
+		'transition'  => '',
+		'type'    		=> '',
 	), $attr));
 
 	if (isset($attr['ids'])) {
