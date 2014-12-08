@@ -176,6 +176,11 @@ function solofolio_css() {
       top: 35px;
       padding: " . $layout_spacing . "px;
     }
+    .horizon.page-template-story-php .wrapper { margin-top: -" . $layout_spacing . "px }
+    .horizon.page-template-story-php .vert-scroll-full {
+      margin-left: -" . $layout_spacing . "px;
+      margin-right: -" . $layout_spacing . "px;
+    }
   }
   .heights .solofolio-cyclereact-sidebar { padding-right: " . $layout_spacing . "px }
   .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }

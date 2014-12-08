@@ -372,6 +372,10 @@ input:focus, textarea:focus, button:focus { outline: none }
 .page-template-story-php .wrapper h1,
 .page-template-story-php .wrapper h3 { text-align: center }
 .page-template-story-php p { margin-top: 2rem; margin-bottom: 2rem; }
+.page-template-story-php .vert-scroll.vert-scroll-full .wp-caption-text {
+  max-width: 100% !important;
+  padding: 0 1rem;
+}
 /* Lazy loader */
 .lazy-hidden {
   opacity: 0;
@@ -390,6 +394,11 @@ input:focus, textarea:focus, button:focus { outline: none }
 @-ms-viewport { width: device-width; }
 
 @media only screen and (min-width: 1025px) {
+  .page-template-story-php .vert-scroll-window:first-child { margin-top: 1rem }
+  body.page-template-story-php .vert-scroll.vert-scroll-full {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .entry { margin-bottom: 3rem; }
   .menu-icon { display: none }
   .header {
@@ -630,6 +639,7 @@ input:focus, textarea:focus, button:focus { outline: none }
     margin-bottom: 1rem;
     min-width: 320px;
   }
+  .page-template-story-php .header { margin-bottom: 0 }
   .header-meta { max-width: inherit }
   .header-content {
     display: none;
@@ -732,6 +742,9 @@ input:focus, textarea:focus, button:focus { outline: none }
   }
   body .wrapper .solofolio-cyclereact-title {
     left: auto !important;
+  }
+  .vert-scroll-full {
+    margin: 0 -1rem;
   }
 }
 
@@ -838,7 +851,7 @@ input:focus, textarea:focus, button:focus { outline: none }
     transform-origin: left top 0;
   }
   .heights.page-template-story-php .wrapper {
-    top: 1rem !important;
+    top: 0;
     left: 0 !important;
     right: 0 !important;
   }

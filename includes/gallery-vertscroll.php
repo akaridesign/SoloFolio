@@ -2,6 +2,20 @@
 
 $i = 0;
 
+if (!function_exists('solofolio_vertscroll_container_classes')) {
+  function solofolio_vertscroll_container_classes($size) {
+    switch ($size) {
+      case 'full':
+        return 'vert-scroll vert-scroll-full';
+        break;
+      case 'window':
+      default:
+        return 'vert-scroll vert-scroll-window';
+        break;
+    }
+  }
+}
+
 $output = "<div class='solofolio-vert-scroll-gallery'>";
 
 if ($hasTitleSlide) {
@@ -18,7 +32,7 @@ foreach ( $attachments as $id => $attachment ) {
 	$xlarge = wp_get_attachment_image_src($id, 'xlarge');
 	$caption = solofolio_attachment_caption($attachment);
 
-	$output .= "<div class='vert-scroll' style='max-width:" . $xlarge[1] . "px' id='" . $i . "'>";
+	$output .= "<div class='" . solofolio_vertscroll_container_classes($size) . "' style='max-width:" . $xlarge[1] . "px' id='" . $i . "'>";
 
 	$output .= "
 		<img
