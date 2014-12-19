@@ -1,6 +1,6 @@
 <form method="get" class="searchform" action="<?php echo esc_url(home_url()); ?>/">
   <input type="text"
-         value="Search"
+         value="<?php _e( 'Search', 'solofolio' ); ?>"
          name="s"
          id="s"
          onblur="if (this.value == '') {this.value = 'Search';}"
