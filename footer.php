@@ -15,7 +15,7 @@
 global $current_user;
 if ($current_user->user_level != 10 ) { echo get_theme_mod( 'solofolio_tracking' ); }
 
-wp_footer()
+wp_footer();
 ?>
 
 </body>
