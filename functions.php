@@ -147,7 +147,7 @@ function solofolio_comments($comment, $args, $depth) {
       <?php endif; ?>
 
       <div class="comment-meta commentmetadata">
-        <h4 class="comment-author vcard"><?php printf(__('%s'), get_comment_author_link()) ?></h4>
+        <h4 class="comment-author vcard"><?php printf(__('%s', 'solofolio'), get_comment_author_link()) ?></h4>
         <small><?php printf(__('%1$s', 'solofolio'), get_comment_date('M. j, Y')) ?></small>
         <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
       </div>
@@ -208,13 +208,13 @@ $fixImageMargins = new solofolioFixImageMargins();
 // Register theme widget areas
 if(function_exists('register_sidebar')){
 
-  register_sidebar(array('name' => 'Main Navigation',
+  register_sidebar(array('name' => __( 'Main Navigation' , 'solofolio' ),
     'before_widget' => '<div class="sidebar-widget">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
   ));
-  register_sidebar(array('name' => 'Under Main Navigation on Blog',
+  register_sidebar(array('name' => __( 'Under Main Navigation on Blog' , 'solofolio' ),
     'before_widget' => '<div class="sidebar-widget blog-sidebar">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
