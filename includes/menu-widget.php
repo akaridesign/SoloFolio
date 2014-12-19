@@ -3,10 +3,10 @@ class Solofolio_Custom_Menu extends WP_Widget {
   public function __construct() {
     parent::__construct(
       'solofolio-custom-menu',
-      __( 'SoloFolio Dropdown Menu', 'scm' ),
+      __( 'SoloFolio Dropdown Menu', 'solofolio' ),
       array(
         'classname'   =>  'Solofolio_Custom_Menu',
-        'description' =>  __( 'Add a custom menu to display it using SoloFolio collapsed/dropdown design.', 'scm' )
+        'description' =>  __( 'Add a custom menu to display it using SoloFolio collapsed/dropdown design.', 'solofolio' )
       )
     );
   }
@@ -66,13 +66,13 @@ class Solofolio_Custom_Menu extends WP_Widget {
 
     ?>
     <p>
-      <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'bcmw' ); ?>:
+      <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'solofolio' ); ?>:
         <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
       </label>
     </p>
 
     <p>
-      <label for="<?php echo $this->get_field_id( 'menu' ); ?>"><?php _e( 'Choose menu', 'bcmw' ); ?>:
+      <label for="<?php echo $this->get_field_id( 'menu' ); ?>"><?php _e( 'Choose menu', 'solofolio' ); ?>:
         <select id="<?php echo $this->get_field_id( 'menu' ); ?>" name="<?php echo $this->get_field_name( 'menu' ); ?>">
 
           <?php foreach( $menus as $custom_menu ): ?>
