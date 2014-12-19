@@ -29,9 +29,6 @@ function solofolio_customize_register( $wp_customize )
 		'Source+Sans+Pro' => 'Source Sans Pro'
 		);
 
-	$wp_customize->remove_section( 'title_tagline' );
-	$wp_customize->remove_section( 'static_front_page' );
-
 	$wp_customize->add_section( 'solofolio_logo_section' , array(
 		'title'       => __( 'Logo', 'solofolio' ),
 		'priority'    => 5,
