@@ -17,8 +17,8 @@ if ( post_password_required() ) {
 			<p class="no-comments"><?php _e( 'Comments are closed.', 'solofolio' ); ?></p>
 		<?php } ?>
 	<?php } ?>
-	<?php comment_form(array('title_reply' => 'Leave a reply',
-													 'label_submit' => 'Post comment',
+	<?php comment_form(array('title_reply' => __( 'Leave a reply' , 'solofolio' ),
+													 'label_submit' => __( 'Post comment' , 'solofolio' ),
 													 'comment_notes_after' => '',
 													 'comment_notes_before' => '')); ?>
 	<div class="clear"></div>
