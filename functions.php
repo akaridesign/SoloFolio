@@ -10,9 +10,30 @@ include_once("includes/lazy-load.php");           // Lazy loader
 include_once("includes/customize.php");           // Customizer configuration
 include_once("includes/css.php");                 // CSS constructor
 
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'automatic-feed-links' );
-update_option('image_default_link_type','none');
+function solofolio_theme_setup() {
+  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'automatic-feed-links' );
+
+  // Disable image linking by default
+  update_option('image_default_link_type','none');
+
+  // Add additional image size for large displays, change defaults for others.
+  add_image_size('xlarge',1800,1200, false);
+  update_option('thumbnail_size_w', 300);
+  update_option('thumbnail_size_h', 200);
+  update_option('medium_size_w', 600);
+  update_option('medium_size_h', 400);
+  update_option('large_size_w', 900);
+  update_option('large_size_h', 600);
+
+  # Disable thumbnail cropping
+  if(false === get_option("thumbnail_crop")) {
+    add_option("thumbnail_crop", "0"); }
+  else {
+    update_option("thumbnail_crop", "0");
+  }
+}
+add_action( 'after_setup_theme', 'solofolio_theme_setup' );
 
 # Adapted from http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 function solofolio_wp_title( $title, $sep ) {
@@ -115,25 +136,6 @@ function solofolio_scripts() {
 );
 }
 add_action('wp_enqueue_scripts', 'solofolio_scripts');
-
-// Add additional image size for large displays, change defaults for others.
-function solofolio_set_image_sizes() {
-	add_image_size('xlarge',1800,1200, false);
-	update_option('thumbnail_size_w', 300);
-	update_option('thumbnail_size_h', 200);
-	update_option('medium_size_w', 600);
-	update_option('medium_size_h', 400);
-	update_option('large_size_w', 900);
-	update_option('large_size_h', 600);
-
-  # Disable thumbnail cropping
-  if(false === get_option("thumbnail_crop")) {
-    add_option("thumbnail_crop", "0"); }
-  else {
-    update_option("thumbnail_crop", "0");
-  }
-}
-add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 
 function solofolio_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment; ?>
