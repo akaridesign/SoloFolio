@@ -182,7 +182,7 @@ add_filter('comment_form_field_comment', 'solofolio_comment_form_field_comment_f
 
 // Remove image margins automatically added by WordPress.
 // From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions
-class fixImageMargins{
+class solofolioFixImageMargins{
   public function __construct(){
     add_filter('img_caption_shortcode', array(&$this, 'fixme'), 10, 3);
   }
@@ -203,7 +203,7 @@ class fixImageMargins{
   return $output;
   }
 }
-$fixImageMargins = new fixImageMargins();
+$fixImageMargins = new solofolioFixImageMargins();
 
 // Register theme widget areas
 if(function_exists('register_sidebar')){
