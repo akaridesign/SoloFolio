@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.61");
+define("SOLOFOLIO_VERSION",     "7.0.62");
 
 include_once("includes/helpers.php");             // Helper functions
 include_once("includes/gallery.php");             // Gallery shortcode replacement
@@ -10,9 +10,30 @@ include_once("includes/lazy-load.php");           // Lazy loader
 include_once("includes/customize.php");           // Customizer configuration
 include_once("includes/css.php");                 // CSS constructor
 
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'automatic-feed-links' );
-update_option('image_default_link_type','none');
+function solofolio_theme_setup() {
+  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'automatic-feed-links' );
+
+  // Disable image linking by default
+  update_option('image_default_link_type','none');
+
+  // Add additional image size for large displays, change defaults for others.
+  add_image_size('xlarge',1800,1200, false);
+  update_option('thumbnail_size_w', 300);
+  update_option('thumbnail_size_h', 200);
+  update_option('medium_size_w', 600);
+  update_option('medium_size_h', 400);
+  update_option('large_size_w', 900);
+  update_option('large_size_h', 600);
+
+  # Disable thumbnail cropping
+  if(false === get_option("thumbnail_crop")) {
+    add_option("thumbnail_crop", "0"); }
+  else {
+    update_option("thumbnail_crop", "0");
+  }
+}
+add_action( 'after_setup_theme', 'solofolio_theme_setup' );
 
 # Adapted from http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 function solofolio_wp_title( $title, $sep ) {
@@ -61,6 +82,9 @@ function solofolio_css_cache() {
   }
 
   wp_add_inline_style( 'solofolio-styles-base', $data );
+  if (get_theme_mod( 'solofolio_css' ) != '') {
+    wp_add_inline_style( 'solofolio-styles-base', get_theme_mod( 'solofolio_css' ) );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'solofolio_css_cache', 130 );
 
@@ -113,25 +137,6 @@ function solofolio_scripts() {
 }
 add_action('wp_enqueue_scripts', 'solofolio_scripts');
 
-// Add additional image size for large displays, change defaults for others.
-function solofolio_set_image_sizes() {
-	add_image_size('xlarge',1800,1200, false);
-	update_option('thumbnail_size_w', 300);
-	update_option('thumbnail_size_h', 200);
-	update_option('medium_size_w', 600);
-	update_option('medium_size_h', 400);
-	update_option('large_size_w', 900);
-	update_option('large_size_h', 600);
-
-  # Disable thumbnail cropping
-  if(false === get_option("thumbnail_crop")) {
-    add_option("thumbnail_crop", "0"); }
-  else {
-    update_option("thumbnail_crop", "0");
-  }
-}
-add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
-
 function solofolio_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment; ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
@@ -142,7 +147,7 @@ function solofolio_comments($comment, $args, $depth) {
       <?php endif; ?>
 
       <div class="comment-meta commentmetadata">
-        <h4 class="comment-author vcard"><?php printf(__('%s'), get_comment_author_link()) ?></h4>
+        <h4 class="comment-author vcard"><?php printf(__('%s', 'solofolio'), get_comment_author_link()) ?></h4>
         <small><?php printf(__('%1$s', 'solofolio'), get_comment_date('M. j, Y')) ?></small>
         <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
       </div>
@@ -177,7 +182,7 @@ add_filter('comment_form_field_comment', 'solofolio_comment_form_field_comment_f
 
 // Remove image margins automatically added by WordPress.
 // From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions
-class fixImageMargins{
+class solofolioFixImageMargins{
   public function __construct(){
     add_filter('img_caption_shortcode', array(&$this, 'fixme'), 10, 3);
   }
@@ -198,18 +203,18 @@ class fixImageMargins{
   return $output;
   }
 }
-$fixImageMargins = new fixImageMargins();
+$fixImageMargins = new solofolioFixImageMargins();
 
 // Register theme widget areas
 if(function_exists('register_sidebar')){
 
-  register_sidebar(array('name' => 'Main Navigation',
+  register_sidebar(array('name' => __( 'Main Navigation' , 'solofolio' ),
     'before_widget' => '<div class="sidebar-widget">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
   ));
-  register_sidebar(array('name' => 'Under Main Navigation on Blog',
+  register_sidebar(array('name' => __( 'Under Main Navigation on Blog' , 'solofolio' ),
     'before_widget' => '<div class="sidebar-widget blog-sidebar">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',

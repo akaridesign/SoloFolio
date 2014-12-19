@@ -9,14 +9,8 @@
 	<?php } ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<?php wp_head(); ?>
-	<?php if (get_theme_mod( 'solofolio_css' ) != '') { ?>
-	<style type="text/css">
-		<?php echo get_theme_mod( 'solofolio_css' ) ?>
-	</style>
-	<?php } ?>
 </head>
 <body <?php body_class(solofolio_body_classes()); ?>>
 <div class="header pushy pushy-left">
@@ -64,13 +58,14 @@
 			<?php } ?>
 		</div>
 		<div class="header-content">
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Main Navigation") ) { ?>
-				To add a menu to SoloFolio, create one in Appearance > Widgets.
-			<?php } if (is_home() || is_single() || is_archive()) {
-				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Under Main Navigation on Blog") ) {} } ?>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Main Navigation") ) {
+				_e( 'To add a menu to SoloFolio, create one in Appearance > Widgets.', 'solofolio' );
+			} if (is_home() || is_single() || is_archive()) {
+				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Under Main Navigation on Blog") ) {}
+			} ?>
 		</div>
 	</div>
 </div>
 <div class="site-overlay"></div>
-<a class='menu-btn'><i class="fa fa-bars"></i> menu</a>
+<a class='menu-btn'><i class="fa fa-bars"></i> <?php _e( 'menu', 'solofolio' ); ?></a>
 <div class="wrapper">

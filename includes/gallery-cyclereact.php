@@ -50,9 +50,9 @@ function solofolio_cyclereact_controls() {
 	if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
 		$out = '
 			<ul class="solofolio-cyclereact-controls">
-	      <li><a class="thumbs" href="#" data-cycle-cmd="pause">thumbs</a></li>
-	      <li><a class="prev" href="#">prev</a></li>
-	      <li><a class="next" href="#">next</a></li>
+	      <li><a class="thumbs" href="#" data-cycle-cmd="pause">'. __('thumbs', 'solofolio') . '</a></li>
+	      <li><a class="prev" href="#">'. __('prev', 'solofolio') . '</a></li>
+	      <li><a class="next" href="#">'. __('next', 'solofolio') . '</a></li>
 	      <li><span class="solofolio-cyclereact-count"></span></li>
 	    </ul>
 	  ';
