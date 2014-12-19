@@ -61,6 +61,9 @@ function solofolio_css_cache() {
   }
 
   wp_add_inline_style( 'solofolio-styles-base', $data );
+  if (get_theme_mod( 'solofolio_css' ) != '') {
+    wp_add_inline_style( 'solofolio-styles-base', get_theme_mod( 'solofolio_css' ) );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'solofolio_css_cache', 130 );
 
