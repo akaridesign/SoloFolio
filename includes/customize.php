@@ -52,7 +52,7 @@ function solofolio_customize_register( $wp_customize )
 		) );
 
 		$wp_customize->add_control( 'solofolio_logo_width', array(
-			'label' => 'Width',
+			'label' => __( 'Width' , 'solofolio' ),
 			'settings' => 'solofolio_logo_width',
 			'section' => 'solofolio_logo_section',
 			'priority' => '10',
@@ -268,7 +268,7 @@ function solofolio_customize_register( $wp_customize )
     ) );
 
 	    $wp_customize->add_control( 'solofolio_font_logo', array(
-	    	'label' => 'Logo',
+	    	'label' => __( 'Logo' , 'solofolio' ),
 				'settings' => 'solofolio_font_logo',
 				'section' => 'solofolio_typography_section',
 				'type'    => 'select',
@@ -282,7 +282,7 @@ function solofolio_customize_register( $wp_customize )
     ) );
 
 	    $wp_customize->add_control( 'solofolio_font_head', array(
-	    	'label' => 'Headings',
+	    	'label' => __( 'Headings' , 'solofolio' ),
 				'settings' => 'solofolio_font_head',
 				'section' => 'solofolio_typography_section',
 				'type'    => 'select',
@@ -296,7 +296,7 @@ function solofolio_customize_register( $wp_customize )
     ) );
 
 	    $wp_customize->add_control( 'solofolio_font_body', array(
-	    	'label' => 'Base Font',
+	    	'label' => __( 'Base Font' , 'solofolio' ),
 				'settings' => 'solofolio_font_body',
 				'section' => 'solofolio_typography_section',
 				'type'    => 'select',
@@ -315,7 +315,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 			$wp_customize->add_control( 'solofolio_body_font_size', array(
-				'label' => 'Page Text',
+				'label' => __( 'Page Text' , 'solofolio' ),
 				'settings' => 'solofolio_body_font_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
@@ -328,7 +328,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 			$wp_customize->add_control( 'solofolio_header_meta_font_size', array(
-				'label' => 'Contact info',
+				'label' => __( 'Contact Information' , 'solofolio' ),
 				'settings' => 'solofolio_header_meta_font_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
@@ -341,7 +341,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 			$wp_customize->add_control( 'solofolio_navigation_font_size', array(
-				'label' => 'Menu Links',
+				'label' => __( 'Menu Links' , 'solofolio' ),
 				'settings' => 'solofolio_navigation_font_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
@@ -354,7 +354,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 			$wp_customize->add_control( 'solofolio_navigation_header_font_size', array(
-				'label' => 'Menu Section Titles',
+				'label' => __( 'Menu Section Titles' , 'solofolio' ),
 				'settings' => 'solofolio_navigation_header_font_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
@@ -367,7 +367,7 @@ function solofolio_customize_register( $wp_customize )
       ));
 
 			$wp_customize->add_control( 'solofolio_blog_entry_title_size', array(
-				'label' => 'Blog Titles',
+				'label' => __( 'Blog Titles' , 'solofolio' ),
 				'settings' => 'solofolio_blog_entry_title_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
@@ -386,7 +386,7 @@ function solofolio_customize_register( $wp_customize )
 
 			$wp_customize->add_control( 'solofolio_location', array(
 				'transport'   => 'postMessage',
-				'label' => 'Location',
+				'label' => __( 'Location' , 'solofolio' ),
 				'settings' => 'solofolio_location',
 				'section' => 'solofolio_content_section',
 				'type' => 'text',
@@ -401,7 +401,7 @@ function solofolio_customize_register( $wp_customize )
 
 			$wp_customize->add_control( 'solofolio_blink_username', array(
 				'transport'   => 'postMessage',
-				'label' => 'Blink Username (for location)',
+				'label' => __( 'Blink Username' , 'solofolio' ),
 				'settings' => 'solofolio_blink_username',
 				'section' => 'solofolio_content_section',
 				'type' => 'text',
@@ -416,7 +416,7 @@ function solofolio_customize_register( $wp_customize )
 
 			$wp_customize->add_control( 'solofolio_email', array(
 				'transport'   => 'postMessage',
-				'label' => 'Email Address',
+				'label' => __( 'E-mail Address' , 'solofolio' ),
 				'settings' => 'solofolio_email',
 				'section' => 'solofolio_content_section',
 				'type' => 'text',
@@ -431,7 +431,7 @@ function solofolio_customize_register( $wp_customize )
 
 			$wp_customize->add_control( 'solofolio_phone', array(
 				'transport'   => 'postMessage',
-				'label' => 'Phone Number',
+				'label' => __( 'Phone Number' , 'solofolio' ),
 				'settings' => 'solofolio_phone',
 				'section' => 'solofolio_content_section',
 				'type' => 'text',
@@ -444,7 +444,7 @@ function solofolio_customize_register( $wp_customize )
 		));
 
 			$wp_customize->add_control( 'solofolio_copyright_text', array(
-				'label' => 'Copyright Text',
+				'label' => __( 'Copyright Text' , 'solofolio' ),
 				'settings' => 'solofolio_copyright_text',
 				'section' => 'solofolio_content_section',
 				'type' => 'text',
@@ -544,7 +544,7 @@ function solofolio_customize_register( $wp_customize )
 		) );
 
 		$wp_customize->add_control( 'solofolio_layout_spacing', array(
-			'label' => 'Layout Spacing',
+			'label' => __( 'Layout Spacing' , 'solofolio' ),
 			'settings' => 'solofolio_layout_spacing',
 			'section' => 'solofolio_options_section',
       'priority' => 70,
@@ -557,7 +557,7 @@ function solofolio_customize_register( $wp_customize )
     ) );
 
     $wp_customize->add_control( 'solofolio_header_width', array(
-      'label' => 'Sidebar Width',
+      'label' => __( 'Sidebar Width' , 'solofolio' ),
       'settings' => 'solofolio_header_width',
       'section' => 'solofolio_options_section',
       'priority' => 80,
@@ -630,7 +630,7 @@ function solofolio_customize_register( $wp_customize )
 		) );
 
 			$wp_customize->add_control( 'solofolio_gallery_controls_size', array(
-				'label' => 'Gallery buttons size',
+				'label' => __( 'Gallery buttons size' , 'solofolio' ),
 				'settings' => 'solofolio_gallery_controls_size',
 				'section' => 'solofolio_advanced_section',
 			) );
@@ -642,7 +642,7 @@ function solofolio_customize_register( $wp_customize )
 		) );
 
 			$wp_customize->add_control( 'solofolio_entry_width', array(
-				'label' => 'Blog Entry Width',
+				'label' => __( 'Blog Entry Width' , 'solofolio' ),
 				'settings' => 'solofolio_entry_width',
 				'section' => 'solofolio_advanced_section',
 			) );
@@ -654,7 +654,7 @@ function solofolio_customize_register( $wp_customize )
 		) );
 
 			$wp_customize->add_control( 'solofolio_entry_text_width', array(
-				'label' => 'Blog Entry Text Width',
+				'label' => __( 'Blog Entry Text Width' , 'solofolio' ),
 				'settings' => 'solofolio_entry_text_width',
 				'section' => 'solofolio_advanced_section',
 			) );
@@ -669,7 +669,7 @@ function solofolio_customize_register( $wp_customize )
 		) );
 
 		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_tracking', array(
-			'label' => 'Footer HTML',
+			'label' => __( 'Footer HTML' , 'solofolio' ),
 			'settings' => 'solofolio_tracking',
 			'section' => 'solofolio_tracking_css',
 			'priority' => '',
@@ -681,7 +681,7 @@ function solofolio_customize_register( $wp_customize )
 		) );
 
 		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_css', array(
-			'label' => 'Custom CSS',
+			'label' => __( 'Custom CSS' , 'solofolio' ),
 			'settings' => 'solofolio_css',
 			'section' => 'solofolio_tracking_css',
 			'priority' => '',
