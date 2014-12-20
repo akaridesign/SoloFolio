@@ -12,9 +12,7 @@
 </div>
 
 <?php
-global $current_user;
-if ($current_user->user_level != 10 ) { echo get_theme_mod( 'solofolio_tracking' ); }
-
+if( !current_user_can('manage_options') ) { echo get_theme_mod( 'solofolio_tracking' ); }
 wp_footer();
 ?>
 
