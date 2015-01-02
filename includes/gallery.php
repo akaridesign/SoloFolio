@@ -45,13 +45,20 @@ function solofolio_gallery_shortcode($output, $attr) {
 
 	$id = intval($id);
 
-	if ( is_home() ||
-			 is_single() ||
-			 is_page_template( 'about.php' ) ||
-			 is_page_template( 'parent.php' ) ||
-			 is_page_template( 'story.php' ) ||
-			 preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT'])
-		 ) {
+	# Use vertscroll as default if none is set in these cases
+	if (empty($type)) {
+		if ( is_home() ||
+				 is_single() ||
+				 is_page_template( 'about.php' ) ||
+				 is_page_template( 'parent.php' ) ||
+				 is_page_template( 'story.php' )
+			 ) {
+			$type = "vert-scroll";
+		}
+	}
+
+	# Send old versions of IE to vert scroll gallery
+	if ( preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT']) ) {
 		$type = "vert-scroll";
 	}
 
@@ -64,6 +71,7 @@ function solofolio_gallery_shortcode($output, $attr) {
 		case "react":
 			include("gallery-vertscroll.php");
 			break;
+		case "solofolio":
 		default:
 			include("gallery-cyclereact.php");
 			break;
