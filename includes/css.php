@@ -61,7 +61,7 @@ function solofolio_css() {
   .solofolio-cyclereact-thumbs .thumb { border-color: ". $background_color . " }
   .solofolio-cyclereact-title,
   .footer { background-color: " . $background_color . " }
-  .header, .horizon .header-content .solofolio-custom-menu ul { background-color: ". $header_background_color . " }
+  .header { background-color: ". $header_background_color . " }
   .header-meta { font-size: " . $header_meta_font_size . "px }
   .header-content li a {
     font-size: " . $navigation_font_size . "px;
@@ -196,10 +196,7 @@ function solofolio_css() {
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { left: " . $header_width . "px !important }
-    .heights .solofolio-cyclereact-sidebar {
-      bottom: " . $layout_spacing . "px;
-      background-color: ". $header_background_color . ";
-    }
+    .heights .solofolio-cyclereact-sidebar {bottom: " . $layout_spacing . "px;}
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { padding: " . $layout_spacing . "px }
     .heights .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing - 10) . "px }
