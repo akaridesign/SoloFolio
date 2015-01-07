@@ -75,7 +75,8 @@ function solofolio_css() {
   .header-content ul a:visited,
   .menu-icon, .menu-btn { color: " . $navigation_link_color . " }
   .header-content ul a:hover,
-  .header-content ul a:active { color: " . $navigation_link_color_hover . " }
+  .header-content ul a:active,
+  .header-content .solofolio-custom-menu h3:hover { color: " . $navigation_link_color_hover . " }
   h2.post-title { font-size: " . $blog_entry_title_size . "px }
   h2.post-title,
   h2.post-title a { color: " . $blog_entry_title_color . " }
