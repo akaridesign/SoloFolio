@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.65");
+define("SOLOFOLIO_VERSION",     "7.0.66");
 
 include_once("includes/helpers.php");             // Helper functions
 include_once("includes/gallery.php");             // Gallery shortcode replacement
@@ -13,6 +13,7 @@ include_once("includes/css.php");                 // CSS constructor
 function solofolio_theme_setup() {
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'woocommerce' );
 
   // Disable image linking by default
   update_option('image_default_link_type','none');
@@ -220,6 +221,15 @@ if(function_exists('register_sidebar')){
     'before_title' => '<h3>',
     'after_title' => '</h3>',
   ));
+
+  if (class_exists('Woocommerce')) {
+    register_sidebar(array('name' => __( 'WooCommerce pages only' , 'solofolio' ),
+      'before_widget' => '<div class="sidebar-widget blog-sidebar">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+    ));
+  }
 }
 
 if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

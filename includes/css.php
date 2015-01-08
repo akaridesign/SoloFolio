@@ -48,10 +48,12 @@ function solofolio_css() {
   h1, h2, h3, h4, h5, h6 { color: " . $blog_entry_title_color . " }
   a:link,
   a:visited,
-  .header-location { color: " . $body_link_color . "}
+  .header-location,
+  .woocommerce-page .woocommerce-breadcrumb a { color: " . $body_link_color . "}
   a:hover,
   a:active,
-  .content-parent .children li:hover a h3 { color: " . $body_link_color_hover . " }
+  .content-parent .children li:hover a h3,
+  .woocommerce-page .woocommerce-breadcrumb a:hover { color: " . $body_link_color_hover . " }
   .site-title a {
     font-family: '" . $font_logo . "';
     color: " . $logo_color . ";
@@ -101,7 +103,9 @@ function solofolio_css() {
   button:hover { border-color: " . $navigation_link_color_hover . " }
   input,
   textarea,
-  button {
+  button,
+  .woocommerce-page ul.products li.product a.button,
+  .woocommerce #review_form #respond .form-submit input  {
     border: 1px solid " . $navigation_link_color . ";
     color: " . $body_font_color . ";
   }
