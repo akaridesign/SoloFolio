@@ -62,7 +62,13 @@
 				_e( 'To add a menu to SoloFolio, create one in Appearance > Widgets.', 'solofolio' );
 			} if (is_home() || is_single() || is_archive()) {
 				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Under Main Navigation on Blog") ) {}
-			} ?>
+			}
+			if (class_exists('Woocommerce')) {
+				if (is_cart() || is_checkout() || is_woocommerce()) {
+					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("WooCommerce pages only") ) {}
+				}
+			}
+			?>
 		</div>
 	</div>
 </div>

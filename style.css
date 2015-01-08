@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: A portfolio platform for creatives.
-Version: 7.0.65
+Version: 7.0.66
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -388,6 +388,38 @@ input:focus, textarea:focus, button:focus { outline: none }
   margin-bottom: 1rem;
 }
 .clear { clear: both }
+/* WooCommerce Integration */
+.woocommerce #sidebar,
+.woocommerce-result-count,
+.widget_shopping_cart_content .product_list_widget,
+.widget_shopping_cart_content .total,
+.woocommerce .page-title,
+.woocommerce-ordering,
+.woocommerce .woocommerce-info:before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active:before,
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs:before,
+.woocommerce #content div.product .woocommerce-tabs ul.tabs:after,
+.woocommerce div.product .woocommerce-tabs ul.tabs li:after { display: none !important }
+.woocommerce .woocommerce-info {
+  border: none;
+  background: none;
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+  padding: 0 !important;
+}
+.woocommerce ul.products li.product a img,
+.woocommerce-page div.product div.images img { box-shadow: none }
+.woocommerce-page .related ul.products li.product { max-width: 250px }
+.woocommerce div.product h2, .woocommerce div.product p { max-width: none }
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs { padding-left: 0 }
+.woocommerce div.product .woocommerce-tabs ul.tabs li { margin: 0 }
+.woocommerce div.product .woocommerce-tabs ul.tabs li a { text-shadow: none }
 
 /* Media Queries */
 
