@@ -1,3 +1,8 @@
+<?php
+/* Template Name: WooCommerce Page */
+get_header();
+?>
+
 <?php get_header(); ?>
 
 <div class="content-page content-woocommerce">
