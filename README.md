@@ -64,5 +64,5 @@ License: MIT
 
 Blink SDK
 By Blink
-http://blink.la
+http://www.blink.la
 License: MIT
