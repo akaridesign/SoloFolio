@@ -29,7 +29,6 @@ function solofolio_css() {
   $byline_color                   = get_theme_mod('solofolio_blog_entry_byline_color',        '#999999');
   $navigation_link_color          = get_theme_mod('solofolio_navigation_link_color',          '#999999');
   $navigation_link_color_hover    = get_theme_mod('solofolio_navigation_link_color_hover',    '#333333');
-  $base_url                       = get_template_directory_uri();
 
   $styles = "/* v" . constant('SOLOFOLIO_VERSION') . " generated on: " . date(' Y-m-d \a\t H:i:s') . " */ ";
 
@@ -117,20 +116,6 @@ function solofolio_css() {
     font-size: " . ($button_size * .55) . "px;
     line-height: " . $button_size . "px;
     width: " . $button_size . "px;
-  }
-  .solofolio-cyclereact-nav-left {
-    cursor: url('" . $base_url  . "/css/cursor-left-32.png'), auto;
-    cursor: -webkit-image-set(
-      url('" . $base_url  . "/css/cursor-left-32.png') 1x,
-      url('" . $base_url  . "/css/cursor-left-64.png') 2x
-    ), auto;
-  }
-  .solofolio-cyclereact-nav-right {
-    cursor: url('" . $base_url  . "/css/cursor-right-32.png'), auto;
-    cursor: -webkit-image-set(
-      url('" . $base_url  . "/css/cursor-right-32.png') 1x,
-      url('" . $base_url  . "/css/cursor-right-64.png') 2x
-    ), auto;
   }
   .solofolio-cyclereact-sidebar.buttons .fa { line-height: " . $button_size . "px }
   .entry .post-meta,
