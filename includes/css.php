@@ -186,7 +186,10 @@ function solofolio_css() {
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { left: " . $header_width . "px !important }
-    .heights .solofolio-cyclereact-sidebar {bottom: " . $layout_spacing . "px;}
+    .heights .solofolio-cyclereact-sidebar {
+      bottom: " . $layout_spacing . "px;
+      left: " . $layout_spacing . "px;
+    }
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { padding: " . $layout_spacing . "px }
     .heights .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing - 10) . "px }
