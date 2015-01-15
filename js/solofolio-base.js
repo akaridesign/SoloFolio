@@ -21,13 +21,13 @@ jQuery(window).load(function(){
   });
 
   jQuery('.solofolio-custom-menu h3').click(function(e){
-    var $target = jQuery(e.target).parent().find('ul');
+    var $target = jQuery(e.target).closest('.solofolio-custom-menu');
 
     if ($target.hasClass('visible')) {
-      $target.removeClass('visible').hide();
+      $target.removeClass('visible').find('ul').hide();
     } else {
-      jQuery('.solofolio-custom-menu ul').removeClass('visible').hide();
-      $target.toggle().addClass('visible');
+      jQuery('.solofolio-custom-menu').removeClass('visible').find('ul').hide();
+      $target.addClass('visible').find('ul').toggle();
     }
   });
 
