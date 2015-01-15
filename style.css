@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: A portfolio platform for creatives.
-Version: 7.0.73
+Version: 7.0.74
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -560,6 +560,7 @@ input:focus, textarea:focus, button:focus { outline: none }
   }
   .solofolio-cyclereact-image { z-index: 2 }
   .solofolio-cyclereact-nav-left,
+  .solofolio-cyclereact-nav-thumbs,
   .solofolio-cyclereact-nav-right {
     height: 100%;
     position: absolute;
@@ -570,11 +571,21 @@ input:focus, textarea:focus, button:focus { outline: none }
   .solofolio-cyclereact-nav-left {
     cursor: w-resize;
     left: 0;
-    width: 50%;
+    width: 33.333333%;
+  }
+  .solofolio-cyclereact-nav-thumbs {
+    cursor:context-menu;
+    left: 33.333333%;
+    width: 33.333333%;
   }
   .solofolio-cyclereact-nav-right {
     cursor: e-resize;
     right: 0;
+    width: 33.333333%;
+  }
+  .thumbnails-disabled .thumbs { display: none !important }
+  .thumbnails-disabled .solofolio-cyclereact-nav-left,
+  .thumbnails-disabled .solofolio-cyclereact-nav-right {
     width: 50%;
   }
   .solofolio-cyclereact-slide { right: 0 }
@@ -639,6 +650,9 @@ input:focus, textarea:focus, button:focus { outline: none }
   }
   .solofolio-cyclereact-nav-left {
     cursor: url('css/cursor-left-32.png'), auto;
+  }
+  .solofolio-cyclereact-nav-thumbs {
+    cursor: url('css/cursor-thumbs-32.png'), auto;
   }
   .solofolio-cyclereact-nav-right {
     cursor: url('css/cursor-right-32.png'), auto;

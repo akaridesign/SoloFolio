@@ -5,19 +5,22 @@ function solofolio_gallery_shortcode($output, $attr) {
 	global $post, $wp_locale;
 
 	extract(shortcode_atts(array(
-		'autoplay' 		=> '',
-		'captions' 		=> '',
-		'id'         	=> $post->ID,
-		'include'    	=> '',
-    'exclude'    	=> '',
-		'order'      	=> 'ASC',
-    'orderby'    	=> 'menu_order ID',
-    'size'				=> 'window',
-		'speed'    		=> '3000',
-		'thumbs'    	=> '',
-		'transition'  => '',
-		'type'    		=> '',
+		'autoplay' 						=> '',
+		'captions' 						=> '',
+		'id'         					=> $post->ID,
+		'include'    					=> '',
+    'exclude'    					=> '',
+		'order'      					=> 'ASC',
+    'orderby'    					=> 'menu_order ID',
+    'size'								=> 'window',
+		'speed'    						=> '3000',
+		'thumbs'    					=> '',
+		'thumbnails_enabled'	=> 'true',
+		'transition'  				=> '',
+		'type'    						=> '',
 	), $attr));
+
+	$thumbnails_enabled = ($thumbnails_enabled == 'true');
 
 	if (isset($attr['ids'])) {
 		$_attachments = get_posts( array('include' => $attr['ids'], 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
