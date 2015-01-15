@@ -14,12 +14,9 @@ jQuery(window).load(function(){
       this.style.opacity = 1;
     });
   });
+});
 
-  jQuery('.menu-icon').click(function(){
-    jQuery(".header-content").toggle();
-    jQuery(this).toggleClass("active");
-  });
-
+jQuery(document).ready(function() {
   jQuery('.solofolio-custom-menu h3').click(function(e){
     var $target = jQuery(e.target).closest('.solofolio-custom-menu');
 
@@ -29,6 +26,11 @@ jQuery(window).load(function(){
       jQuery('.solofolio-custom-menu').removeClass('visible').find('ul').hide();
       $target.addClass('visible').find('ul').toggle();
     }
+  });
+
+  jQuery('.menu-icon').click(function(){
+    jQuery(".header-content").toggle();
+    jQuery(this).toggleClass("active");
   });
 
   /* Open menu containing sub-page */
