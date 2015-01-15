@@ -7,6 +7,12 @@ if ($hasTitleSlide) {
 	$i++;
 }
 
+if ($thumbnails_enabled) {
+	$thumbnails_status_class = 'thumbnails-enabled';
+} else {
+	$thumbnails_status_class = 'thumbnails-disabled';
+}
+
 function solofolio_cyclereact_thumbs_style($thumbs_toggle) {
 	if ($thumbs_toggle == "true") {
 		return "display: block";
@@ -50,7 +56,7 @@ function solofolio_cyclereact_controls() {
 	if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
 		$out = '
 			<ul class="solofolio-cyclereact-controls">
-	      <li><a class="thumbs" href="#" data-cycle-cmd="pause">'. __('thumbs', 'solofolio') . '</a></li>
+	      <li class="thumbs"><a href="#" data-cycle-cmd="pause">'. __('thumbs', 'solofolio') . '</a></li>
 	      <li><a class="prev" href="#">'. __('prev', 'solofolio') . '</a></li>
 	      <li><a class="next" href="#">'. __('next', 'solofolio') . '</a></li>
 	      <li><span class="solofolio-cyclereact-count"></span></li>
@@ -85,8 +91,11 @@ function solofolio_cyclereact_timeout($autoplay, $speed) {
 	}
 }
 
-$output .="<div class='solofolio-cyclereact-wrap'>";
-$output .= solofolio_cyclereact_thumbs($attachments, $thumbs, $i);
+$output .="<div class='solofolio-cyclereact-wrap ". $thumbnails_status_class ."'>";
+
+if ($thumbnails_enabled) {
+	$output .= solofolio_cyclereact_thumbs($attachments, $thumbs, $i);
+}
 
 $output .="
 <div class='solofolio-cyclereact-stage' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>
@@ -153,12 +162,13 @@ $output .= "
 
 <div class='solofolio-cyclereact-image-nav'>
 	<div class='solofolio-cyclereact-nav-right next'></div>
+	<div class='solofolio-cyclereact-nav-thumbs thumbs'></div>
 	<div class='solofolio-cyclereact-nav-left prev'></div>
 </div>
 
 </div></div>
 
-<div class='solofolio-cyclereact-sidebar " . get_theme_mod( 'solofolio_gallery_controls', 'buttons') . "' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>";
+<div class='solofolio-cyclereact-sidebar " . get_theme_mod( 'solofolio_gallery_controls', 'buttons') . " ". $thumbnails_status_class ."' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>";
 
 $output .= solofolio_cyclereact_caption_container($captions);
 $output .= solofolio_cyclereact_controls();
