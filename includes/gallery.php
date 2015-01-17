@@ -60,11 +60,6 @@ function solofolio_gallery_shortcode($output, $attr) {
 		}
 	}
 
-	# Send old versions of IE to vert scroll gallery
-	if ( preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT']) ) {
-		$type = "vert-scroll";
-	}
-
 	$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
 	$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
 	$hasTitleSlide = (!empty($galleryTitle) || !empty($galleryText));
