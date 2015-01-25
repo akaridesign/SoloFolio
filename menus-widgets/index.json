@@ -1,0 +1,6 @@
+{
+    "content": "<p><em>SoloFolio does not support default menus. They must be added via the Custom Menu widget.</em></p>\n<h3 id=\"menus\">Menus</h3>\n<ol>\n<li>Go to Appearance &gt; Menus</li>\n<li>Create a menu for each section of pages. (For example: Home, Projects, Multimedia)</li>\n<li>Add pages to menus</li>\n<li>Go to Appearance &gt; Widgets</li>\n<li>Add a Custom Menu widget to the Main Navigation widget area</li>\n<li>Add a title to the menu widget to display above the menu</li>\n</ol>\n<p><em>Note: Only one menu widget should be used with the Horizon layout.</em></p>\n<h3 id=\"dropdown-menu\">Dropdown menu</h3>\n<p>To create a dropdown menu, use the SoloFolio Dropdown Widget instead of the Custom Menu widget. The widget's Title field will display as the menu title, which will open the menu when clicked.</p>\n<h3 id=\"social-media-links\">Social media links</h3>\n<ol>\n<li>Go to Appearance &gt; Widgets</li>\n<li>Add the SoloFolio Social Media widget to the Main Navigation widget area</li>\n<li>Add your social media links to the widget</li>\n</ol>\n", 
+    "url": "/menus-widgets/", 
+    "language": "en", 
+    "title": "Menus & Widgets"
+}

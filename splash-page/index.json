@@ -1,0 +1,6 @@
+{
+    "content": "<p><img alt=\"Alex Goodlett splash page example\" src=\"../img/alex-splash.jpg\" />\nSplash page in use on <a href=\"http://www.alexgoodlett.com\">http://www.alexgoodlett.com</a></p>\n<ol>\n<li>Go to Pages &gt; Add new</li>\n<li>Click on Add Media, then Insert Gallery</li>\n<li>View page as HTML, and in the [gallery] shortcode, add:</li>\n</ol>\n<p><code>type=\"vert-scroll\"</code></p>\n<p>Example: <code>[gallery ids=\"97,75,77\" type=\"vert-scroll\"]</code></p>\n<p>To hide the image caption, add <code>captions=\"false\"</code></p>\n", 
+    "url": "/splash-page/", 
+    "language": "en", 
+    "title": "Splash Page"
+}

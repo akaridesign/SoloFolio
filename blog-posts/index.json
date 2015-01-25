@@ -1,0 +1,6 @@
+{
+    "content": "<h3 id=\"image-sizing\">Image sizing</h3>\n<p>Resize images to fit 900x600px on the longest edge, saved at JPG quality 6.</p>\n<p><img src=\"../img/blog-quality-pm.png\" width=500 />\n<img src=\"../img/blog-scaling-pm.png\" width=500 /></p>\n<h3 id=\"read-more-links\">Read more links</h3>\n<p>Insert a Read More tag to display the rest of a post after the jump.</p>\n<p><img src=\"../img/blog-read-more.png\" width=200 /></p>\n<h3 id=\"featured-image\">Featured image</h3>\n<p>To display an image above the post title, set it as the post's Featured Image.</p>\n<p><img src=\"../img/blog-featured-image.png\" width=300 /></p>\n", 
+    "url": "/blog-posts/", 
+    "language": "en", 
+    "title": "Blog Posts"
+}

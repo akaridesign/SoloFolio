@@ -1,0 +1,6 @@
+{
+    "content": "<p><img alt=\"Harry Engels parent page example\" src=\"../img/harry-parent.jpg\" /></p>\n<ol>\n<li>Go to Pages &gt; Add new</li>\n<li>Select \"Parent Page\" from the Template dropdown</li>\n<li>Publish page</li>\n<li>For each child page, set the parent page to the one created above</li>\n<li>For each child page, set the Featured Image to pick the thumbnail.</li>\n<li>For each child page, set Order to sort the pages, which will be displayed from lowest to highest Order value.</li>\n</ol>\n", 
+    "url": "/parent-page/", 
+    "language": "en", 
+    "title": "Parent Page Template"
+}

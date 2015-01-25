@@ -1,0 +1,6 @@
+{
+    "content": "<p>Before getting started, you'll need a copy of Wordpress running on a server. Most web hosts make it easy to get an installation up and running. I recommend <a href=\"http://www.dreamhost.com\">Dreamhost</a>.</p>\n<ol>\n<li><a href=\"http://github.com/joelhawksley/SoloFolio/archive/master.zip\">Download</a> the latest version of SoloFolio.</li>\n<li>Copy the theme to <code>/wp-content/themes</code>.</li>\n<li>Go to Appearance &gt; Themes</li>\n<li>Click \"Activate\".</li>\n</ol>\n<p><img alt=\"Themes\" src=\"../img/appearance-themes.png\" /></p>\n", 
+    "url": "/installation/", 
+    "language": "en", 
+    "title": "Installation"
+}
