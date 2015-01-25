@@ -1,14 +1,18 @@
-# Blog Posts
+### Image sizing
 
 Resize images to fit 900x600px on the longest edge, saved at JPG quality 6.
 
-![Photo Mechanic blog image quality](img/blog-quality-pm.png)
-![Photo Mechanic blog image scaling](img/blog-scaling-pm.png)
+<img src="img/blog-quality-pm.png" width=500 />
+<img src="img/blog-scaling-pm.png" width=500 />
+
+### Read more links
 
 Insert a Read More tag to display the rest of a post after the jump.
 
-![Read more link button](img/blog-read-more.png)
+<img src="img/blog-read-more.png" width=200 />
+
+### Featured image
 
 To display an image above the post title, set it as the post's Featured Image.
 
-![Blog featured image](img/blog-featured-image.png)
+<img src="img/blog-featured-image.png" width=300 />

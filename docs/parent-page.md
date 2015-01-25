@@ -1,13 +1,8 @@
-# Parent Page Template
 ![Harry Engels parent page example](img/harry-parent.jpg)
-Parent page in use on [http://www.harryengels.com](http://www.harryengels.com)
 
-### Pages > Add new
-### Template > Parent Page
-### Publish page
-
-_Optional: add text content to display above children page thumbnails._
-
-In each child page, set the parent page to the one created above. Set the Featured Image to pick the picture to be used as a thumbnail.
-
-Set Order to sort amongst sibling pages. Pages will be displayed from lowest to highest Order value.
+1. Go to Pages > Add new
+2. Select "Parent Page" from the Template dropdown
+3. Publish page
+4. For each child page, set the parent page to the one created above
+5. For each child page, set the Featured Image to pick the thumbnail.
+6. For each child page, set Order to sort the pages, which will be displayed from lowest to highest Order value.

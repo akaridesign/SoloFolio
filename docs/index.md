@@ -1,12 +1,6 @@
-# SoloFolio
+<img src="img/hero-1000.jpg" width=700 alt="SoloFolio portfolio theme in use on Alexgoodlett.com">
 
-![SoloFolio WordPress portfolio theme](img/hero.jpg)
-
-# [How-To Guide](installation.md) | [Download](http://github.com/joelhawksley/SoloFolio/archive/master.zip) | [View on GitHub](http://github.com/joelhawksley/SoloFolio)
-
-### A WordPress portfolio theme
-
-SoloFolio makes it simple and easy to create the perfect portfolio and blog. It is built with the specific needs of photojournalists and other creatives in mind.
+SoloFolio makes it easy to create the perfect WordPress portfolio & blog. It is built with the specific needs of photojournalists and other creatives in mind.
 
 ### Features
 - Retina-friendly, fully responsive galleries

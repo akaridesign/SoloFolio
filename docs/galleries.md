@@ -1,30 +1,34 @@
-# Galleries
-
-### Pages: Add new
-Give the page a title. Do not add body text content.
+### Image sizing
 Resize images to fit 2100x1400px on the longest edge, saved at JPG quality 6.
-![Photo Mechanic settings](img/gallery-scaling-pm.png)
 
-### Add Media > Insert Gallery
-Upload images and insert captions.
-em Note: Link To and Columns options in Gallery Settings are not used by SoloFolio.
+<img src="img/gallery-scaling-pm.png" width=500 />
+
+### Creating a gallery
+
+1. Pages > Add new
+2. Give the page a title. Do not add any text content.
+3. Add Media > Insert Gallery
+4. Upload images and insert captions.
+5. Insert Gallery
+
+Note: The _Link To_ and _Columns_ settings are not used by SoloFolio.
 
 
-## Auto Play
-To make a gallery automatically advance, go to the Text view for the page, then add the following code to the gallery shortcode:
-`[gallery ids="..." autoplay="true" speed="3000"]`
-Where the value for speed is the time in milliseconds that each image should be shown.
+### Auto play
+1. Go to the Text view for the page
+2. Add `autoplay="true" speed="3000"` to the `[gallery]` shortcode, where `speed` is the time (in milliseconds) to show each image
 
+`[gallery autoplay="true" speed="3000"]`
 
-## Show Thumbnails by Default
+### Thumbnail view
 ![Kent Nishimura thumbnails view](img/kent-thumbs.jpg)
 
-To show thumbnails by default, go to the Text view for the page, then add the following code to the gallery shortcode:
+1. Go to the Text view for the page
+2. Add the `thumbs="true"` to the `[gallery]` shortcode
 
-`[gallery ids="..." thumbs="true"]`
+`[gallery thumbs="true"]`
 
-
-## Title Slides
+### Title slides
 ![Gallery title slides example](img/gallery-title-slide.jpg)
 
 To add a title slide to a gallery, set the solofolio-gallery-title and solofolio-gallery-text custom fields.
