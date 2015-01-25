@@ -1,10 +1,9 @@
-# Splash Page
 ![Alex Goodlett splash page example](img/alex-splash.jpg)
 Splash page in use on [http://www.alexgoodlett.com](http://www.alexgoodlett.com)
 
-### Pages > Add new
-### Add Media > Insert Gallery
-View page as HTML, and in the [gallery] shortcode, add:
+1. Go to Pages > Add new
+2. Click on Add Media, then Insert Gallery
+3. View page as HTML, and in the [gallery] shortcode, add:
 
 `type="vert-scroll"`
 
