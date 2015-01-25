@@ -5,12 +5,16 @@
  * https://github.com/tomchristie/mkdocs/issues/175
  */
 .wy-menu-vertical span {
-    line-height: 18px;
-    padding: 0.4045em 0.809em;
-    display: block;
-    position: relative;
-    font-size: 90%;
-    color: #838383;
+  line-height: 18px;
+  padding: 0.4045em 1.618em;
+  display: block;
+  position: relative;
+  font-size: 90%;
+  color: #838383;
+}
+
+.wy-menu-vertical .toctree-l2 a {
+  padding: 0.4045em 2.427em;
 }
 
 /*
@@ -20,8 +24,8 @@
  * https://github.com/tomchristie/mkdocs/pull/202
  */
 .wy-nav-side {
-    height: 100%;
-    overflow-y: auto;
+  height: 100%;
+  overflow-y: auto;
 }
 
 /*
@@ -30,5 +34,82 @@
  * https://github.com/tomchristie/mkdocs/issues/233
  */
 code {
-    white-space: pre;
+  white-space: pre;
+}
+
+/* SoloFolio customizations */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-weight: 300;
+}
+
+.rst-versions {
+  border: none;
+}
+
+.rst-versions .rst-current-version {
+  text-align: left;
+  padding: 20px;
+}
+
+.wy-side-header,
+.wy-nav-side,
+.rst-versions .rst-current-version,
+.wy-nav-content,
+.wy-nav-top {
+  background-color: white;
+}
+
+.wy-side-header {
+  padding: 20px;
+}
+
+.wy-side-header img {
+  display: block;
+  padding-bottom: 5px;
+  max-width: 250px;
+}
+
+.wy-nav-top img {
+  background-color: inherit;
+  border-radius: inherit;
+  height: auto;
+  width: 200px;
+}
+
+a,
+a:hover,
+.rst-versions a,
+.wy-menu-vertical a,
+.wy-nav-top {
+  color: #000000;
+  font-weight: bold;
+}
+
+.wy-nav-top i {
+  line-height: 50px;
+  padding-left: 10px;
+}
+
+a:hover, .wy-menu-vertical a:active {
+  color: #999999;
+}
+
+.wy-menu-vertical a:hover, .wy-menu-vertical a:active {
+  background-color: inherit;
+}
+
+body h3 {
+  color: #000000;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 9px;
+  margin: 0 0 20px;
+  border-bottom: 1px solid #eeeeee;
 }

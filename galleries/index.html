@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Galleries - SoloFolio</title>
+  <title>Galleries - SoloFolio - SoloFolio</title>
   
 
   
@@ -33,9 +33,9 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> SoloFolio</a>
-        
+      <div class="wy-side-header">
+        <a href=".."><img src="/img/logo.png" alt="solofolio"/></a>
+        <a href="http://github.com/joelhawksley/SoloFolio/archive/master.zip">Download</a> | <a href="http://github.com/joelhawksley/SoloFolio/">View on Github</a>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -44,13 +44,15 @@
         
             <li class="toctree-l1 ">
                 <a class="" href="../installation">Installation</a>
+                
             </li>
         
 
     
         
             <li class="toctree-l1 ">
-                <a class="" href="../getting-started">Getting Started</a>
+                <a class="" href="../wordpress-settings">WordPress Settings</a>
+                
             </li>
         
 
@@ -58,6 +60,7 @@
         
             <li class="toctree-l1 ">
                 <a class="" href="../customizer">Customizer</a>
+                
             </li>
         
 
@@ -65,6 +68,26 @@
         
             <li class="toctree-l1 current">
                 <a class="current" href=".">Galleries</a>
+                
+                    <ul>
+                    
+                        <li class="toctree-l3"><a href="#image-sizing">Image sizing</a></li>
+                        
+                    
+                        <li class="toctree-l3"><a href="#creating-a-gallery">Creating a gallery</a></li>
+                        
+                    
+                        <li class="toctree-l3"><a href="#auto-play">Auto play</a></li>
+                        
+                    
+                        <li class="toctree-l3"><a href="#thumbnail-view">Thumbnail view</a></li>
+                        
+                    
+                        <li class="toctree-l3"><a href="#title-slides">Title slides</a></li>
+                        
+                    
+                    </ul>
+                
             </li>
         
 
@@ -72,6 +95,7 @@
         
             <li class="toctree-l1 ">
                 <a class="" href="../blog-posts">Blog Posts</a>
+                
             </li>
         
 
@@ -79,6 +103,7 @@
         
             <li class="toctree-l1 ">
                 <a class="" href="../menus-widgets">Menus & Widgets</a>
+                
             </li>
         
 
@@ -86,6 +111,7 @@
         
             <li class="toctree-l1 ">
                 <a class="" href="../about-page">About Page Template</a>
+                
             </li>
         
 
@@ -93,6 +119,7 @@
         
             <li class="toctree-l1 ">
                 <a class="" href="../parent-page">Parent Page Template</a>
+                
             </li>
         
 
@@ -100,6 +127,7 @@
         
             <li class="toctree-l1 ">
                 <a class="" href="../splash-page">Splash Page</a>
+                
             </li>
         
 
@@ -114,75 +142,47 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href=".."></a>
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".."><img src="/img/logo.png" alt="solofolio"/></a>
       </nav>
 
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    <li>Galleries</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="https://github.com/joelhawksley/solofolio" class="icon icon-github"> Edit on GitHub</a>
-          
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
           <div role="main">
             <div class="section">
-              <h1 id="galleries">Galleries</h1>
-<h3 id="pages-add-new">Pages: Add new</h3>
-<p>Give the page a title. Do not add body text content.
-Resize images to fit 2100x1400px on the longest edge, saved at JPG quality 6.
-<img alt="Photo Mechanic settings" src="../img/gallery-scaling-pm.png" /></p>
-<h3 id="add-media-insert-gallery">Add Media &gt; Insert Gallery</h3>
-<p>Upload images and insert captions.
-em Note: Link To and Columns options in Gallery Settings are not used by SoloFolio.</p>
-<h2 id="auto-play">Auto Play</h2>
-<p>To make a gallery automatically advance, go to the Text view for the page, then add the following code to the gallery shortcode:
-<code>[gallery ids="..." autoplay="true" speed="3000"]</code>
-Where the value for speed is the time in milliseconds that each image should be shown.</p>
-<h2 id="show-thumbnails-by-default">Show Thumbnails by Default</h2>
+              <h3 id="image-sizing">Image sizing</h3>
+<p>Resize images to fit 2100x1400px on the longest edge, saved at JPG quality 6.</p>
+<p><img src="../img/gallery-scaling-pm.png" width=500 /></p>
+<h3 id="creating-a-gallery">Creating a gallery</h3>
+<ol>
+<li>Pages &gt; Add new</li>
+<li>Give the page a title. Do not add any text content.</li>
+<li>Add Media &gt; Insert Gallery</li>
+<li>Upload images and insert captions.</li>
+<li>Insert Gallery</li>
+</ol>
+<p>Note: The <em>Link To</em> and <em>Columns</em> settings are not used by SoloFolio.</p>
+<h3 id="auto-play">Auto play</h3>
+<ol>
+<li>Go to the Text view for the page</li>
+<li>Add <code>autoplay="true" speed="3000"</code> to the <code>[gallery]</code> shortcode, where <code>speed</code> is the time (in milliseconds) to show each image</li>
+</ol>
+<p><code>[gallery autoplay="true" speed="3000"]</code></p>
+<h3 id="thumbnail-view">Thumbnail view</h3>
 <p><img alt="Kent Nishimura thumbnails view" src="../img/kent-thumbs.jpg" /></p>
-<p>To show thumbnails by default, go to the Text view for the page, then add the following code to the gallery shortcode:</p>
-<p><code>[gallery ids="..." thumbs="true"]</code></p>
-<h2 id="title-slides">Title Slides</h2>
+<ol>
+<li>Go to the Text view for the page</li>
+<li>Add the <code>thumbs="true"</code> to the <code>[gallery]</code> shortcode</li>
+</ol>
+<p><code>[gallery thumbs="true"]</code></p>
+<h3 id="title-slides">Title slides</h3>
 <p><img alt="Gallery title slides example" src="../img/gallery-title-slide.jpg" /></p>
 <p>To add a title slide to a gallery, set the solofolio-gallery-title and solofolio-gallery-text custom fields.</p>
 <p><img alt="Gallery title slide settings" src="../img/gallery-title-slide.png" /></p>
 
             </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../blog-posts" class="btn btn-neutral float-right" title="Blog Posts"/>Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../customizer" class="btn btn-neutral" title="Customizer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-    <!-- Copyright etc -->
-    </p>
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
         </div>
       </div>
 
@@ -192,11 +192,8 @@ Where the value for speed is the time in milliseconds that each image should be 
 
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
-        
-            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
-        
-      <span><a href="../customizer" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../blog-posts" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../customizer">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../blog-posts">Next &raquo;</a></span>
     </span>
 </div>
 </body>
