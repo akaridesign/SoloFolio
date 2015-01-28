@@ -5,5 +5,5 @@
          id="s"
          onblur="if (this.value == '') {this.value = 'Search';}"
          onfocus="if (this.value == 'Search') {this.value = '';}" />
-  <button type="submit" class="sidebar-search fa fa-search"></button>
+  <span><button type="submit" class="sidebar-search fa fa-search"></button></span>
 </form>
