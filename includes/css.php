@@ -197,20 +197,20 @@ function solofolio_css() {
       top: " . $layout_spacing . "px;
       bottom: " . $layout_spacing . "px;
     }
-    .heights.page-template-story-php .pushy { width: " . $header_width . "px }
+    .heights.page-template-story-php .pushy .header-inner { width: " . $header_width . "px }
     .heights.page-template-story-php .pushy-left {
-      -webkit-transform: translate3d(-" . $header_width . "px,0,0);
-      -moz-transform: translate3d(-" . $header_width . "px,0,0);
-      -ms-transform: translate3d(-" . $header_width . "px,0,0);
-      -o-transform: translate3d(-" . $header_width . "px,0,0);
-      transform: translate3d(-" . $header_width . "px,0,0);
+      -webkit-transform: translate3d(-" . ($header_width + ($layout_spacing * 2)) . "px,0,0);
+      -moz-transform: translate3d(-" . ($header_width + ($layout_spacing * 2)) . "px,0,0);
+      -ms-transform: translate3d(-" . ($header_width + ($layout_spacing * 2)) . "px,0,0);
+      -o-transform: translate3d(-" . ($header_width + ($layout_spacing * 2)) . "px,0,0);
+      transform: translate3d(-" . ($header_width + ($layout_spacing * 2)) . "px,0,0);
     }
     .heights.page-template-story-php .vert-scroll {
       padding-left: " . $layout_spacing . "px;
       padding-right: " . $layout_spacing . "px;
     }
     .heights .wrapper {
-      left: " . ($header_width + $layout_spacing) . "px;
+      left: " . ($header_width + ($layout_spacing * 2)) . "px;
     }
     @media only screen and (min-width: 2000px) {
       .centered-content.blog.heights .wrapper,
@@ -222,7 +222,7 @@ function solofolio_css() {
   }";
   if ($header_background_color == $background_color) {
     $styles .= "
-    .heights .wrapper { left: " . ($header_width) . "px }
+    .heights .wrapper { left: " . ($header_width + ($layout_spacing * 2)) . "px }
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { left: " . ($header_width + $layout_spacing) . "px !important }";
