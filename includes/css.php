@@ -110,7 +110,7 @@ function solofolio_css() {
   }
   .blog .fluid-width-video-wrapper,
   .comments small { color: " . $byline_color . " }
-  .solofolio-cyclereact-sidebar { max-width: " . ($header_width - $layout_spacing) . "px }
+  .solofolio-cyclereact-sidebar { max-width: " . $header_width . "px }
   .solofolio-cyclereact-sidebar.buttons a {
     height: " . $button_size . "px;
     font-size: " . ($button_size * .55) . "px;
@@ -155,7 +155,7 @@ function solofolio_css() {
       padding-bottom: " . $layout_spacing . "px;
     }
     .horizon .solofolio-cyclereact-sidebar {
-      top: " . ($layout_spacing + 45) . "px;
+      top: " . ($layout_spacing + 40) . "px;
       right: " . $layout_spacing . "px;
     }
     .horizon .solofolio-cyclereact-stage,
@@ -170,7 +170,6 @@ function solofolio_css() {
       margin-right: -" . $layout_spacing . "px;
     }
   }
-  .heights .solofolio-cyclereact-sidebar { padding-right: " . $layout_spacing . "px }
   .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }
   @media (min-width: 1025px) {
     .heights .wrapper {
@@ -179,13 +178,13 @@ function solofolio_css() {
       right: " . $layout_spacing . "px;
       top: " . $layout_spacing . "px;
     }
-    .heights .header { width: " . $header_width . "px }
-    .heights .header-meta { max-width: " . ($header_width - ($layout_spacing * 2)) . "px }
+    .heights .header { width: " . ($header_width + ($layout_spacing * 2)) . "px }
+    .heights .header-inner { width: " . $header_width . "px }
     .heights .admin-bar.page .wrapper { top: " . ($layout_spacing + 32) . "px}
     .heights .admin-bar.page .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing + 22) . "px }
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
-    .heights .solofolio-cyclereact-title { left: " . $header_width . "px !important }
+    .heights .solofolio-cyclereact-title { left: " . ($header_width + ($layout_spacing * 2)) . "px !important }
     .heights .solofolio-cyclereact-sidebar {
       bottom: " . $layout_spacing . "px;
       left: " . $layout_spacing . "px;
@@ -226,7 +225,7 @@ function solofolio_css() {
     .heights .wrapper { left: " . ($header_width) . "px }
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
-    .heights .solofolio-cyclereact-title { left: " . ($header_width - $layout_spacing) . "px !important }";
+    .heights .solofolio-cyclereact-title { left: " . ($header_width + $layout_spacing) . "px !important }";
   }
 
   $styles = str_replace(': ', ':', $styles);
