@@ -17,7 +17,7 @@ class solofolio_social_widget extends WP_Widget {
   $linkedin = apply_filters('widget_title', $instance['linkedin']);
 
   echo $before_widget;
-  echo "<div id=\"solofolio-social\">";
+  echo "<div class=\"solofolio-social\">";
     if ($facebook != "") {echo "<a target=\"_blank\" href=\"" . $facebook . "\"><i class=\"fa fa-facebook\"></i></a>";}
     if ($twitter != "") {echo "<a target=\"_blank\" href=\"" . $twitter . "\"><i class=\"fa fa-twitter\"></i></a>";}
     if ($instagram != "") {echo "<a target=\"_blank\" href=\"" . $instagram . "\"><i class=\"fa fa-instagram\"></i></a>";}

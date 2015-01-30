@@ -15,7 +15,6 @@
 <body <?php body_class(solofolio_body_classes()); ?>>
 <div class="header pushy pushy-left">
 	<div class="header-inner">
-		<a class='menu-icon'><i class="fa fa-bars"></i></a>
 		<?php if (get_theme_mod( 'solofolio_logo' ) != '') { ?>
 			<div class="logo logo-img">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
@@ -57,6 +56,7 @@
 				</div>
 			<?php } ?>
 		</div>
+		<a class='menu-icon'>Menu <i class="fa fa-bars"></i></a>
 		<div class="header-content">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Main Navigation") ) {
 				_e( 'To add a menu to SoloFolio, create one in Appearance > Widgets.', 'solofolio' );
