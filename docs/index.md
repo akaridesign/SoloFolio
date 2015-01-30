@@ -1,6 +1,6 @@
 <img src="img/hero-1000.jpg" width=700 alt="SoloFolio portfolio theme in use on Alexgoodlett.com">
 
-SoloFolio makes it easy to create the perfect WordPress portfolio & blog. It is built with the specific needs of photojournalists and other creatives in mind.
+Built with the specific needs of photojournalists in mind, SoloFolio makes it easy to create the perfect WordPress portfolio & blog.
 
 ### Features
 - Retina-friendly, fully responsive galleries
