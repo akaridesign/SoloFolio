@@ -4,6 +4,11 @@ var setResponsive = function () {
 
   var n = jQuery(".header").css('right');
 
+  if (jQuery(window).width() > 1024) {
+    jQuery('.solofolio-cyclereact-gallery').cycle();
+    jQuery('.solofolio-cyclereact-gallery').cycle('resume');
+  }
+
   if (jQuery(window).width() < 1025) {
     jQuery('.solofolio-cyclereact-gallery').cycle('pause');
 
@@ -12,10 +17,6 @@ var setResponsive = function () {
       var width = jQuery(this).outerWidth();
       jQuery(this).parent().find('.wp-caption-text').css('max-width', width)
     });
-  }
-
-  if (jQuery(window).width() > 1024) {
-    jQuery('.solofolio-cyclereact-gallery').cycle('resume');
   }
 }
 
@@ -59,9 +60,11 @@ jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-update-view', function( eve
 });
 
 jQuery(document.documentElement).keyup(function (e) {
-  if (e.keyCode == 37) { jQuery('.solofolio-cyclereact-gallery').cycle('prev') }
-  if (e.keyCode == 38) { jQuery('.thumbs').trigger('click') }
-  if (e.keyCode == 39) { jQuery('.solofolio-cyclereact-gallery').cycle('next') }
+  if (jQuery(window).width() > 1024) {
+    if (e.keyCode == 37) { jQuery('.solofolio-cyclereact-gallery').cycle('prev') }
+    if (e.keyCode == 38) { jQuery('.thumbs').trigger('click') }
+    if (e.keyCode == 39) { jQuery('.solofolio-cyclereact-gallery').cycle('next') }
+  }
 });
 
 jQuery.fn.cycle.transitions.fadeOutIn = {

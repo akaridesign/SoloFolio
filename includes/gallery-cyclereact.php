@@ -99,7 +99,7 @@ if ($thumbnails_enabled) {
 
 $output .="
 <div class='solofolio-cyclereact-stage' style='". solofolio_cyclereact_gallery_style($thumbs) ."'>
-<div class='solofolio-cyclereact-gallery cycle-slideshow manual'
+<div class='solofolio-cyclereact-gallery manual'
 	data-cycle-slides='.solofolio-cyclereact-slide'
 	data-cycle-prev='.prev'
 	data-cycle-next='.next'
