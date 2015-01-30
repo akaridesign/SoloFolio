@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: SoloFolio is a simple and professional theme built specifically for photography portfolio websites. Features include responsive photo galleries with retina images, a no-compromises experience for mobile/tablet users, custom widgets for dropdown menus and social media icons, WooCommerce compatiblity, live location via Blink, and integration with Photoshelter BEAM template Element.
-Version: 7.0.82
+Version: 7.0.83
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -701,7 +701,7 @@ input:focus, textarea:focus, button:focus { outline: none }
     margin-bottom: 1rem;
     min-width: 320px;
   }
-  .header .logo { margin-bottom: 1rem; padding-top: 1rem; }
+  .header .logo { padding-top: 1rem }
   .page-template-story-php .header { margin-bottom: 0 }
   .header-meta { max-width: inherit }
   .header-content { display: none }
@@ -719,6 +719,7 @@ input:focus, textarea:focus, button:focus { outline: none }
   .sidebar-widget, .solofolio-custom-menu { margin-top: 0 }
   .header-meta div {
     float: none;
+    padding-top : .25em;
   }
   .wrapper {
     margin-top: 0;
@@ -845,7 +846,6 @@ input:focus, textarea:focus, button:focus { outline: none }
     margin: 0 -1rem;
   }
   .header, .footer { text-align: center }
-  .header-meta div { padding: 0 1rem }
 }
 
 @media only screen and (max-width: 620px) {
