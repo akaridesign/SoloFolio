@@ -8,6 +8,7 @@ Built with the specific needs of photojournalists in mind, SoloFolio makes it ea
 - No-compromises experience for mobile/tablet users
 - Custom widgets for dropdown menus and social media icons
 - Works on screens of all sizes from 3" to 30"
+- Compatible with [WooCommerce](http://www.woothemes.com/woocommerce/) eCommerce Toolkit
 - Integrates with [Photoshelter BEAM](http://www.photoshelter.com/tour/beam) Element template
 - Loads real-time location from [Blink](http://www.blink.la/)
 
