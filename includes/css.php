@@ -63,7 +63,8 @@ function solofolio_css() {
   .solofolio-cyclereact-title,
   .footer { background-color: " . $background_color . " }
   .header { background-color: ". $header_background_color . " }
-  .header-meta { font-size: " . $header_meta_font_size . "px }
+  .header-meta,
+  .solofolio-cyclereact-controls { font-size: " . $header_meta_font_size . "px }
   .header-content li a {
     font-size: " . $navigation_font_size . "px;
     line-height: " . $navigation_font_size . "px;
