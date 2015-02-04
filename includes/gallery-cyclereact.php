@@ -63,13 +63,14 @@ function solofolio_cyclereact_controls() {
 	    </ul>
 	  ';
 	} else {
-		$out= '
+		$out = '
 			<div class="solofolio-cyclereact-controls">
 	      <a class="thumbs" href="#" data-cycle-cmd="pause"><i class="fa fa-th"></i></a>
 	      <span class="arrows">
 	        <a class="prev" href="#"><i class="fa fa-caret-left"></i></a>
 	        <a class="next" href="#"><i class="fa fa-caret-right"></i></a>
 	      </span>
+	      <span class="solofolio-cyclereact-count"></span>
 	    </div>
 	  ';
 	}
