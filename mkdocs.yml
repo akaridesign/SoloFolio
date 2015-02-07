@@ -4,7 +4,6 @@ site_description: A WordPress theme for the creatively inclined.
 site_author: Joel Hawksley
 copyright: 2015 Joel Hawksley, All content licensed MIT
 repo_url: https://github.com/joelhawksley/solofolio
-google_analytics: ['UA-49286958-1', 'solofol.io']
 theme: ""
 theme_dir: docs_theme
 pages:
