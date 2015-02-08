@@ -59,7 +59,6 @@ function solofolio_css() {
   }
   .site-title a:hover { color: " . $logo_color_hover . " }
   .logo-img a { width: " . $logo_width . "px }
-  .solofolio-cyclereact-thumbs .thumb { border-color: ". $background_color . " }
   .solofolio-cyclereact-title,
   .footer { background-color: " . $background_color . " }
   .header { background-color: ". $header_background_color . " }
