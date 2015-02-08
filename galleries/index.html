@@ -80,7 +80,7 @@
                         <li class="toctree-l3"><a href="#auto-play">Auto play</a></li>
                         
                     
-                        <li class="toctree-l3"><a href="#thumbnail-view">Thumbnail view</a></li>
+                        <li class="toctree-l3"><a href="#thumbnails">Thumbnails</a></li>
                         
                     
                         <li class="toctree-l3"><a href="#title-slides">Title slides</a></li>
@@ -169,13 +169,20 @@
 <li>Add <code>autoplay="true" speed="3000"</code> to the <code>[gallery]</code> shortcode, where <code>speed</code> is the time (in milliseconds) to show each image</li>
 </ol>
 <p><code>[gallery autoplay="true" speed="3000"]</code></p>
-<h3 id="thumbnail-view">Thumbnail view</h3>
+<h3 id="thumbnails">Thumbnails</h3>
 <p><img alt="Kent Nishimura thumbnails view" src="../img/kent-thumbs.jpg" /></p>
+<p><strong>To display thumbnails as default:</strong></p>
 <ol>
 <li>Go to the Text view for the page</li>
-<li>Add the <code>thumbs="true"</code> to the <code>[gallery]</code> shortcode</li>
+<li>Add the <code>thumbs="true"</code> to the <code>[gallery]</code> shortcode:</li>
 </ol>
 <p><code>[gallery thumbs="true"]</code></p>
+<p><strong>To disable thumbnails:</strong></p>
+<ol>
+<li>Go to the Text view for the page</li>
+<li>Add the <code>thumbnails_enabled="false"</code> to the <code>[gallery]</code> shortcode:</li>
+</ol>
+<p><code>[gallery thumbnails_enabled="false"]</code></p>
 <h3 id="title-slides">Title slides</h3>
 <p><img alt="Gallery title slides example" src="../img/gallery-title-slide.jpg" /></p>
 <p>To add a title slide to a gallery, set the solofolio-gallery-title and solofolio-gallery-text custom fields.</p>
