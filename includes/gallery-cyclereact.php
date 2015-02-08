@@ -41,10 +41,11 @@ function solofolio_cyclereact_thumbs($attachments, $thumbs, $i) {
 
 		$out .= "
 		<li class='thumb'><a href='#" . $i . "'>
-				<img data-sizes='auto'
+				<img src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+						 data-sizes='auto'
 						 data-srcset='
-						 " . $thumb[0] . " " . $thumb[1]. "w,
-	    			 " . $medium[0] . " " . $medium[1]. "w'
+						 " . $thumb[0] . " 1x,
+	    			 " . $medium[0] . " 2x'
 	    			 class='lazyload'>
 		</a></li>
 		";
