@@ -7,8 +7,6 @@
 jQuery(window).load(function(){
   jQuery(".wrapper").fitVids();
 
-  jQuery('.thumb img').retina();
-
   jQuery("img.lazy").unveil(1200, function() {
     jQuery(this).load(function() {
       this.style.opacity = 1;

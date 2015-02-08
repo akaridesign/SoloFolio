@@ -27,11 +27,6 @@ By @afarkas @jdalton @jon_neal @rem
 http://github.com/aFarkas/html5shiv
 License: MIT/GPL2
 
-jQuery Retina Plugin
-By Tyler Craft
-http://github.com/tylercraft/jQuery-Retina
-License: MIT/GPL
-
 Picturefill
 By Scott Jehl
 http://scottjehl.github.io/picturefill
