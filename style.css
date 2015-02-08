@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: SoloFolio is a simple and professional theme built specifically for photography portfolio websites. Features include responsive photo galleries with retina images, a no-compromises experience for mobile/tablet users, custom widgets for dropdown menus and social media icons, WooCommerce compatiblity, live location via Blink, and integration with Photoshelter BEAM template Element.
-Version: 7.0.86
+Version: 7.0.87
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -507,13 +507,22 @@ input:focus, textarea:focus, button:focus { outline: none }
   .solofolio-cyclereact-slide .wp-caption-text {
     display: none;
   }
-  .solofolio-cyclereact-slide img {
+  .solofolio-cyclereact-slide .image {
     display: block;
     height: auto;
     width: auto;
     max-height: 100%;
     max-width: 100%;
     margin: 0 auto;
+    position: relative;
+    width: 100%;
+  }
+  .solofolio-cyclereact-slide img {
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
     position: relative;
   }
   .solofolio-cyclereact-title {
@@ -820,6 +829,9 @@ input:focus, textarea:focus, button:focus { outline: none }
   .wrapper h1 { font-size: 22px }
   .vert-scroll .wp-caption-text { max-width: none }
   .solofolio-gallery-title h2 { text-align: center }
+  .solofolio-cyclereact-slide .image {
+    margin: 0 auto;
+  }
   .solofolio-cyclereact-slide img {
     max-width: 100%;
     width: auto;
@@ -974,7 +986,7 @@ input:focus, textarea:focus, button:focus { outline: none }
     background-color: rgba(0,0,0,0.5);
   }
   .heights.page-template-story-php.pushy-active { overflow-x: hidden }
-  .heights .solofolio-cyclereact-slide img {
+  .heights .solofolio-cyclereact-slide .image {
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);

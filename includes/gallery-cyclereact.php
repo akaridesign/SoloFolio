@@ -141,14 +141,16 @@ foreach ( $attachments as $id => $attachment ) {
 		<div class='solofolio-cyclereact-slide' id='" . $i . "' data-cycle-hash='" .  $i . "' data-cycle-title='" .  $caption . "'>";
 
 	$output .= "
-		<img
-    data-sizes='auto'
-    data-srcset='
-    " . $large[0] . " " . $large[1]. "w,
-    " . $xlarge[0] . " " . $xlarge[1]. "w'
-    class='lazyload'
-    width=" . $xlarge[1] . "
-    height=" . $xlarge[2] . "/>
+		<div class='image' style='max-width: " . $xlarge[1] . "px; max-height: " . $xlarge[2] . "px'>
+			<img
+	    data-sizes='auto'
+	    data-srcset='
+	    " . $large[0] . " " . $large[1]. "w,
+	    " . $xlarge[0] . " " . $xlarge[1]. "w'
+	    class='lazyload'
+	    width=" . $xlarge[1] . "
+	    height=" . $xlarge[2] . "/>
+    </div>
 	";
 
 	if ($captions != "false" && !empty($caption)) {
