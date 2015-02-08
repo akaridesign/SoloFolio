@@ -20,13 +20,22 @@ Note: The _Link To_ and _Columns_ settings are not used by SoloFolio.
 
 `[gallery autoplay="true" speed="3000"]`
 
-### Thumbnail view
+### Thumbnails
 ![Kent Nishimura thumbnails view](img/kent-thumbs.jpg)
 
+__To display thumbnails as default:__
+
 1. Go to the Text view for the page
-2. Add the `thumbs="true"` to the `[gallery]` shortcode
+2. Add the `thumbs="true"` to the `[gallery]` shortcode:
 
 `[gallery thumbs="true"]`
+
+__To disable thumbnails:__
+
+1. Go to the Text view for the page
+2. Add the `thumbnails_enabled="false"` to the `[gallery]` shortcode:
+
+`[gallery thumbnails_enabled="false"]`
 
 ### Title slides
 ![Gallery title slides example](img/gallery-title-slide.jpg)
