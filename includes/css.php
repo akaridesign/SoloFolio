@@ -1,36 +1,34 @@
 <?php
 function solofolio_css() {
-  $mods = get_theme_mods();
-
-  $layout_spacing                 = $mods['solofolio_layout_spacing'];
-  $header_width                   = $mods['solofolio_header_width'];
-  $logo_width                     = $mods['solofolio_logo_width'];
-  $entry_width                    = $mods['solofolio_entry_width'];
-  $entry_text_width               = $mods['solofolio_entry_text_width'];
-  $button_size                    = $mods['solofolio_gallery_controls_size'];
-  $is_horizon                     = ( $mods['solofolio_layout_mode'] == 'horizon');
-  $font_logo                      = str_replace("+"," ", $mods['solofolio_font_logo']);
-  $font_head                      = str_replace("+"," ", $mods['solofolio_font_head']);
-  $font_body                      = str_replace("+"," ", $mods['solofolio_font_body']);
-  $navigation_font_size           = $mods['solofolio_navigation_font_size'];
-  $header_meta_font_size          = $mods['solofolio_header_meta_font_size'];
-  $navigation_header_font_size    = $mods['solofolio_navigation_header_font_size'];
-  $body_font_size                 = $mods['solofolio_body_font_size'];
-  $blog_entry_title_size          = $mods['solofolio_blog_entry_title_size'];
-  $logo_color                     = $mods['solofolio_logo_color'];
-  $logo_color_hover               = $mods['solofolio_logo_color_hover'];
-  $body_font_color                = $mods['solofolio_body_font_color'];
-  $body_link_color                = $mods['solofolio_body_link_color'];
-  $body_link_color_hover          = $mods['solofolio_body_link_color_hover'];
-  $body_caption_color             = $mods['solofolio_body_caption_color'];
-  $navigation_header_color        = $mods['solofolio_navigation_header_color'];
-  $background_color               = $mods['solofolio_background_color'];
-  $header_background_color        = $mods['solofolio_header_background_color'];
-  $blog_entry_title_color         = $mods['solofolio_blog_entry_title_color'];
-  $blog_entry_title_color_hover   = $mods['solofolio_blog_entry_title_color_hover'];
-  $byline_color                   = $mods['solofolio_blog_entry_byline_color'];
-  $navigation_link_color          = $mods['solofolio_navigation_link_color'];
-  $navigation_link_color_hover    = $mods['solofolio_navigation_link_color_hover'];
+  $layout_spacing                 = get_theme_mod('solofolio_layout_spacing',                 '40');
+  $header_width                   = get_theme_mod('solofolio_header_width',                   '280');
+  $logo_width                     = get_theme_mod('solofolio_logo_width',                     '200');
+  $entry_width                    = get_theme_mod('solofolio_entry_width',                    '900');
+  $entry_text_width               = get_theme_mod('solofolio_entry_text_width',               '600');
+  $button_size                    = get_theme_mod('solofolio_gallery_controls_size',          '30');
+  $is_horizon                     = get_theme_mod('solofolio_layout_mode') ==                 'horizon';
+  $font_logo = str_replace("+"," ", get_theme_mod('solofolio_font_logo',                      'Roboto'));
+  $font_head = str_replace("+"," ", get_theme_mod('solofolio_font_head',                      'Roboto'));
+  $font_body = str_replace("+"," ", get_theme_mod('solofolio_font_body',                      'Roboto'));
+  $navigation_font_size           = get_theme_mod('solofolio_navigation_font_size',           '14');
+  $header_meta_font_size          = get_theme_mod('solofolio_header_meta_font_size',          '14');
+  $navigation_header_font_size    = get_theme_mod('solofolio_navigation_header_font_size',    '14');
+  $body_font_size                 = get_theme_mod('solofolio_body_font_size',                 '14');
+  $blog_entry_title_size          = get_theme_mod('solofolio_blog_entry_title_size',          '24');
+  $logo_color                     = get_theme_mod('solofolio_logo_color',                     '#333333');
+  $logo_color_hover               = get_theme_mod('solofolio_logo_color_hover',               '#999999');
+  $body_font_color                = get_theme_mod('solofolio_body_font_color',                '#333333');
+  $body_link_color                = get_theme_mod('solofolio_body_link_color',                '#333333');
+  $body_link_color_hover          = get_theme_mod('solofolio_body_link_color_hover',          '#999999');
+  $body_caption_color             = get_theme_mod('solofolio_body_caption_color',             '#999999');
+  $navigation_header_color        = get_theme_mod('solofolio_navigation_header_color',        '#333333');
+  $background_color               = get_theme_mod('solofolio_background_color',               '#ffffff');
+  $header_background_color        = get_theme_mod('solofolio_header_background_color',        '#ffffff');
+  $blog_entry_title_color         = get_theme_mod('solofolio_blog_entry_title_color',         '#333333');
+  $blog_entry_title_color_hover   = get_theme_mod('solofolio_blog_entry_title_color_hover',   '#999999');
+  $byline_color                   = get_theme_mod('solofolio_blog_entry_byline_color',        '#999999');
+  $navigation_link_color          = get_theme_mod('solofolio_navigation_link_color',          '#999999');
+  $navigation_link_color_hover    = get_theme_mod('solofolio_navigation_link_color_hover',    '#333333');
 
   $styles = "/* v" . constant('SOLOFOLIO_VERSION') . " generated on: " . date(' Y-m-d \a\t H:i:s') . " */ ";
 
@@ -184,9 +182,6 @@ function solofolio_css() {
     .heights .header-inner { width: " . $header_width . "px }
     .heights .admin-bar.page .wrapper { top: " . ($layout_spacing + 32) . "px}
     .heights .admin-bar.page .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing + 22) . "px }
-    .heights .solofolio-cyclereact-stage,
-    .heights .solofolio-cyclereact-thumbs,
-    .heights .solofolio-cyclereact-title { left: " . ($header_width + ($layout_spacing * 2)) . "px !important }
     .heights .solofolio-cyclereact-sidebar {
       bottom: " . $layout_spacing . "px;
       left: " . $layout_spacing . "px;
@@ -228,6 +223,11 @@ function solofolio_css() {
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { left: " . ($header_width + $layout_spacing) . "px !important }";
+  } else {
+    $styles .= "
+    .heights .solofolio-cyclereact-stage,
+    .heights .solofolio-cyclereact-thumbs,
+    .heights .solofolio-cyclereact-title { left: " . ($header_width + ($layout_spacing * 2)) . "px !important }";
   }
 
   $styles = str_replace(': ', ':', $styles);
