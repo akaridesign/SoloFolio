@@ -225,6 +225,7 @@ function solofolio_css() {
     .heights .solofolio-cyclereact-title { left: " . ($header_width + $layout_spacing) . "px !important }";
   } else {
     $styles .= "
+    .heights .wrapper { left: " . ($header_width + ($layout_spacing * 3)) . "px }
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { left: " . ($header_width + ($layout_spacing * 2)) . "px !important }";
