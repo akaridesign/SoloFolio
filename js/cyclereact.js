@@ -2,13 +2,23 @@ var setResponsive = function () {
   var pageHeight = jQuery(window).height();
   var spacing = solofolioGallery.layoutSpacing;
 
-  var n = jQuery(".header").css('right');
-
   jQuery('.solofolio-cyclereact-slide img').css('max-height', pageHeight - spacing - spacing);
+}
 
+var showThumbs = function () {
+  jQuery('.solofolio-cyclereact-gallery').cycle('pause');
+  jQuery(".solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage").hide();
+  jQuery(".solofolio-cyclereact-thumbs").show();
+}
+
+var showGallery = function () {
+  jQuery(".solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage").show();
+  jQuery(".solofolio-cyclereact-thumbs").hide();
+}
+
+var detectResize = function () {
   if (jQuery(window).width() > 1024) {
     jQuery('.solofolio-cyclereact-gallery').cycle();
-    jQuery('.solofolio-cyclereact-gallery').cycle('resume');
   }
 
   if (jQuery(window).width() < 1025) {
@@ -20,22 +30,14 @@ var setResponsive = function () {
   }
 }
 
-var showThumbs = function () {
-  jQuery(".solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage").hide();
-  jQuery(".solofolio-cyclereact-thumbs").show();
-}
-
-var showGallery = function () {
-  jQuery(".solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage").show();
-  jQuery(".solofolio-cyclereact-thumbs").hide();
-}
-
 jQuery(window).load(function(){
   jQuery('.solofolio-cyclereact-thumbs img').load(function() {
     jQuery(this).fadeIn('slow');
   });
 
   setResponsive();
+  detectResize();
+
   jQuery(".thumbs").click(function(){
     showThumbs();
   });
@@ -44,7 +46,10 @@ jQuery(window).load(function(){
   });
 });
 
-jQuery(window).resize(setResponsive);
+jQuery(window).resize(function(){
+  setResponsive();
+  detectResize();
+});
 
 jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-after', function( event, opts ) {
   showGallery();
