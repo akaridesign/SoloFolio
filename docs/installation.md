@@ -8,3 +8,8 @@ Before getting started, you'll need a copy of Wordpress running on a server. Mos
 ![Themes](img/appearance-themes.png)
 
 Advanced users: you can also [download](http://github.com/joelhawksley/SoloFolio/archive/master.zip) the latest version of SoloFolio directly from GitHub.
+
+### Recommended Plugins
+- All in one SEO
+- WooCommerce
+
