@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.98");
+define("SOLOFOLIO_VERSION",     "7.0.99");
 
 include_once("includes/helpers.php");             // Helper functions
 include_once("includes/gallery.php");             // Gallery shortcode replacement
@@ -21,7 +21,7 @@ function solofolio_theme_setup() {
 
   // Add additional image size for large displays, change defaults for others.
   add_image_size('xlarge',1800,1200, false);
-  update_option('thumbnail_size_w', 300);
+  update_option('thumbnail_size_w', 10000);
   update_option('thumbnail_size_h', 200);
   update_option('medium_size_w', 600);
   update_option('medium_size_h', 400);
