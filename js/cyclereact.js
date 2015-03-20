@@ -2,7 +2,12 @@ var setResponsive = function () {
   var pageHeight = jQuery(window).height();
   var spacing = solofolioGallery.layoutSpacing;
 
-  jQuery('.solofolio-cyclereact-slide img').css('max-height', pageHeight - spacing - spacing);
+  if (solofolioBase.layoutMode == "horizon") {
+    var headerHeight = jQuery('.header').outerHeight();
+    jQuery('.solofolio-cyclereact-slide img').css('max-height', pageHeight - headerHeight - spacing - spacing);
+  } else {
+    jQuery('.solofolio-cyclereact-slide img').css('max-height', pageHeight - spacing - spacing);
+  }
 }
 
 var showThumbs = function () {
