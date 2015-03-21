@@ -18,3 +18,5 @@ To create a dropdown menu, use the SoloFolio Dropdown Widget instead of the Cust
 1. Go to Appearance > Widgets
 2. Add the SoloFolio Social Media widget to the Main Navigation widget area
 3. Add your social media links to the widget
+
+<img src="img/widgets-social-media.png" width=300 />
