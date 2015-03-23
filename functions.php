@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.102");
+define("SOLOFOLIO_VERSION",     "7.0.103");
 
 include_once("includes/helpers.php");             // Helper functions
 include_once("includes/gallery.php");             // Gallery shortcode replacement
@@ -100,11 +100,12 @@ add_action( 'after_switch_theme', 'solofolio_css_cache_reset' );
 
 if ( !isset( $content_width ) ) $content_width = 900;
 
-function filter_ptags_on_images($content) {
+# Aid in responsive image handling: https://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/
+function solofolio_filter_ptags_on_images($content) {
   $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
   return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
 }
-add_filter('the_content', 'filter_ptags_on_images');
+add_filter('the_content', 'solofolio_filter_ptags_on_images');
 
 function solofolio_load_fonts() {
   $fonts = array(get_theme_mod('solofolio_font_body', 'Roboto'),
@@ -235,4 +236,3 @@ if(function_exists('register_sidebar')){
 if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
   wp_enqueue_script( 'comment-reply' );
 }
-?>
