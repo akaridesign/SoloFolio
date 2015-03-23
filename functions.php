@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.103");
+define("SOLOFOLIO_VERSION",     "7.0.104");
 
 include_once("includes/helpers.php");             // Helper functions
 include_once("includes/gallery.php");             // Gallery shortcode replacement
@@ -15,6 +15,7 @@ function solofolio_theme_setup() {
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'woocommerce' );
   add_theme_support( 'title-tag' );
+  add_theme_support( 'html5', array( 'caption' ) );
 
   // Disable image linking by default
   update_option('image_default_link_type','none');
@@ -181,31 +182,6 @@ function solofolio_comment_form_field_comment_filter($comment_field = '') {
   return $comment_field;
 }
 add_filter('comment_form_field_comment', 'solofolio_comment_form_field_comment_filter');
-
-// Remove image margins automatically added by WordPress.
-// From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions
-class solofolioFixImageMargins{
-  public function __construct(){
-    add_filter('img_caption_shortcode', array(&$this, 'fixme'), 10, 3);
-  }
-  public function fixme($x=null, $attr, $content){
-    extract(shortcode_atts(array(
-            'id'    => '',
-            'align'    => 'alignnone',
-            'width'    => '',
-            'caption' => ''
-        ), $attr));
-    if ( 1 > (int) $width || empty($caption) ) {return $content;}
-    if ( $id ) $id = 'id="' . $id . '" ';
-    $output = '<div ' . $id . 'class="wp-caption ' . $align . '" style="max-width: ' . $width . 'px">' . $content;
-    if (!empty($caption)) {
-      $output .= '<p class="wp-caption-text">' . $caption . '</p>';
-    }
-    $output .= '</div>';
-  return $output;
-  }
-}
-$fixImageMargins = new solofolioFixImageMargins();
 
 // Register theme widget areas
 if(function_exists('register_sidebar')){
