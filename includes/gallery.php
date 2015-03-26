@@ -67,11 +67,11 @@ function solofolio_gallery_shortcode($output, $attr) {
 	switch ($type) {
 		case "vert-scroll":
 		case "react":
-			require_once("gallery-vertscroll.php");
+			include("gallery-vertscroll.php");
 			break;
 		case "solofolio":
 		default:
-			require_once("gallery-cyclereact.php");
+			include("gallery-cyclereact.php");
 			break;
 	}
 
