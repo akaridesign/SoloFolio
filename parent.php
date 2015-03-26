@@ -22,6 +22,7 @@
           <a href="<?php echo get_page_link( $page->ID ); ?>">
             <?php echo get_the_post_thumbnail( $page->ID, 'medium' ); ?>
             <h3><?php echo $page->post_title; ?></h3>
+            <h4><?php echo $page->post_excerpt; ?></h4>
           </a>
         </li>
       <?php

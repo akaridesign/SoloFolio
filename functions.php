@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.104");
+define("SOLOFOLIO_VERSION",     "7.0.105");
 
 include_once("includes/helpers.php");             // Helper functions
 include_once("includes/gallery.php");             // Gallery shortcode replacement
@@ -16,6 +16,7 @@ function solofolio_theme_setup() {
   add_theme_support( 'woocommerce' );
   add_theme_support( 'title-tag' );
   add_theme_support( 'html5', array( 'caption' ) );
+  add_post_type_support( 'page', 'excerpt' );
 
   // Disable image linking by default
   update_option('image_default_link_type','none');
