@@ -65,7 +65,8 @@ jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-before', function( event, o
   setResponsive();
 });
 
-jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-update-view', function( event, opts ) {
+jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-update-view', function( event, opts, slideOptionsHash, currentSlideEl) {
+  jQuery(currentSlideEl).find('img').show();
   jQuery(".solofolio-cyclereact-count").html((opts.currSlide + 1) + " / " + opts.slideCount);
 });
 
