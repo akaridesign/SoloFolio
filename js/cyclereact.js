@@ -90,7 +90,6 @@ jQuery.fn.cycle.transitions.fadeOutIn = {
         'opacity': 1,
     });
 
-
     curr.fadeOut(500,function(){
       next.fadeIn(500, function(){
         callback();
@@ -98,22 +97,3 @@ jQuery.fn.cycle.transitions.fadeOutIn = {
     });
   }
 }
-
-jQuery(document).on('lazybeforeunveil', (function(){
-  var onLoad = function(e){
-    setResponsive();
-    jQuery(e.target)
-      .fadeTo(800, 1)
-      .off('load error', onLoad)
-    ;
-  };
-  return function(e){
-    if(!e.isDefaultPrevented()){
-      jQuery(e.target)
-        .filter('img')
-        .css({opacity: 0})
-        .on('load error', onLoad)
-      ;
-    }
-  };
-})());
