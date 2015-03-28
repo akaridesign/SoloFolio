@@ -37,3 +37,7 @@ jQuery(document).ready(function() {
   }
 });
 
+window.lazySizesConfig = {
+  addClasses: true
+};
+

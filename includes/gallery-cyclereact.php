@@ -153,6 +153,7 @@ foreach ( $attachments as $id => $attachment ) {
 	    " . $large[0] . " " . $large[1]. "w,
 	    " . $xlarge[0] . " " . $xlarge[1]. "w'
 	    class='lazyload'
+	    style='display: none'
 	    width=" . $xlarge[1] . "
 	    height=" . $xlarge[2] . "/>
     </div>

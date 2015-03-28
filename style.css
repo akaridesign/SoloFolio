@@ -378,10 +378,13 @@ input:focus, textarea:focus, button:focus { outline: none }
   max-width: 100% !important;
   padding: 0 1rem;
 }
-/* Lazy loader */
-.lazy-hidden {
-  opacity: 0;
-  transition: opacity .2s ease-in;
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
 }
 /* Blink Map */
 .blink-map iframe {
