@@ -1,4 +1,4 @@
-![Harry Engels parent page example](img/harry-parent.jpg)
+<img src="img/harry-parent.jpg" class="bordered" />
 
 1. Go to Pages > Add new
 2. Select "Parent Page" from the Template dropdown

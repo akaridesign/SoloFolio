@@ -24,6 +24,8 @@
  * https://github.com/tomchristie/mkdocs/pull/202
  */
 .wy-nav-side {
+  border-right: 1px solid #eeeeee;
+  width: 200px;
   height: 100%;
   overflow-y: auto;
 }
@@ -48,8 +50,23 @@ body {
   font-weight: 300;
 }
 
+.wy-body-for-nav {
+  background-image: none;
+}
+
 .rst-versions {
   border: none;
+  width: 200px;
+}
+
+.wy-nav-content-wrap {
+  background: none;
+}
+
+@media screen and (min-width: 769px) {
+.wy-nav-content-wrap {
+  margin-left: 200px;
+}
 }
 
 .rst-versions .rst-current-version {
@@ -69,14 +86,23 @@ body {
   margin-top: 10px;
 }
 
+.donate img {
+  display: none !important;
+}
+
+.wy-nav-side.shift {
+  width: 100%;
+}
+
 .wy-side-header {
+  line-height: 1.3;
   padding: 20px;
 }
 
 .wy-side-header img {
   display: block;
   padding-bottom: 5px;
-  max-width: 250px;
+  max-width: 150px;
 }
 
 .wy-nav-top img {
@@ -93,7 +119,22 @@ a:visited,
 .wy-menu-vertical a,
 .wy-nav-top {
   color: #000000;
+}
+
+a,
+a:hover,
+a:visited {
   font-weight: bold;
+}
+
+.rst-versions a,
+.wy-menu-vertical a,
+.wy-nav-top {
+  font-weight: normal;
+}
+
+.wy-menu-vertical li.current a {
+  border-right: none;
 }
 
 .wy-nav-top i {
