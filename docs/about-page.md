@@ -1,4 +1,4 @@
-<img src="img/susannah-about.jpg" width="500" />
+<img src="img/wick-about.jpg" width="700" class="bordered"/>
 
 1. Go to Pages > Add new
 2. Select "About Page" from the Template dropdown
