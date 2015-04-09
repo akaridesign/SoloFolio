@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.107");
+define("SOLOFOLIO_VERSION",     "7.0.108");
 
 include_once("includes/helpers.php");             // Helper functions
 include_once("includes/gallery.php");             // Gallery shortcode replacement
@@ -38,29 +38,6 @@ function solofolio_theme_setup() {
   }
 }
 add_action( 'after_setup_theme', 'solofolio_theme_setup' );
-
-# Adapted from http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
-function solofolio_wp_title( $title, $sep ) {
-  global $paged, $page;
-
-  if ( is_feed() )
-    return $title;
-
-  // Add the site name.
-  $title .= get_bloginfo( 'name' );
-
-  // Add the site description for the home/front page.
-  $site_description = get_bloginfo( 'description', 'display' );
-  if ( $site_description && ( is_home() || is_front_page() ) )
-    $title = "$title $sep $site_description";
-
-  // Add a page number if necessary.
-  if ( $paged >= 2 || $page >= 2 )
-    $title = "$title $sep " . sprintf( __( 'Page %s', 'solofolio' ), max( $paged, $page ) );
-
-  return $title;
-}
-add_filter( 'wp_title', 'solofolio_wp_title', 10, 2 );
 
 function solofolio_body_classes() {
   $classes = array(get_theme_mod('solofolio_layout_mode', 'heights'));
